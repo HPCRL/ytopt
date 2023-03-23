@@ -8,14 +8,13 @@ from skopt.space import Real, Integer, Categorical
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(1, os.path.dirname(HERE)+ '/plopper')
-# TODO: Changed here to use custom plopper
 from plopper_transformdialect_test import Plopper
 
 # create an object of ConfigSpace
 cs = CS.ConfigurationSpace(seed=1234)
 #block size for openmp dynamic schedule
 # p0= CSH.OrdinalHyperparameter(name='BLOCK_SIZE', sequence=['1','2','3','4','5','6','7','8','9','10'], default_value='5')
-p0= CSH.UniformIntegerHyperparameter(name='BLOCK_SIZE', lower=1, upper=10, default_value=5)
+p0= CSH.UniformIntegerHyperparameter(name='FILL_ME', lower=28, upper=33, default_value=32)
 cs.add_hyperparameters([p0])
 
 # problem space
@@ -28,19 +27,20 @@ output_space = Space([
 dir_path = os.path.dirname(os.path.realpath(__file__))
 kernel_idx = dir_path.rfind('/')
 kernel = dir_path[kernel_idx+1:]
-obj = Plopper(dir_path+'/mmm_block.cpp',dir_path)
+#TODO:replace me with the location to transform dialect script to change.
+obj = Plopper(dir_path+'/reduction_codegen_spec.mlir',dir_path)
 
-x1=['BLOCK_SIZE']
+x1=['FILL_ME']
 def myobj(point: dict):
     def plopper_func(x):
         x = np.asarray_chkfinite(x)  # ValueError if any NaN or Inf
         value = [point[x1[0]]]
         print('CONFIG:',point)
-        params = ["BLOCK_SIZE"]
+        params = ["FILL_ME"]
         result = obj.findRuntime(value, params)
         return result
 
-    x = np.array([point['BLOCK_SIZE']])
+    x = np.array([point['FILL_ME']])
     results = plopper_func(x)
     print('OUTPUT: ',results)
     return results
