@@ -56,8 +56,8 @@ class Plopper:
         os.environ['CUDA_VISIBLE_DEVICES'] = '0'
         build_cmd = "cmake -DCMAKE_CXX_FLAGS=\"-DAUTO_TUNER -DBX={0} -DBY={1} -DTY={2} -DTX={3}\" .. > /dev/null && make > /dev/null && ./codegen".format(dictVal['BX'], dictVal['BY'], dictVal['TX'], dictVal['TY'])
         compile_cmd = 'iree-compile {0} --iree-hal-target-backends=cuda --iree-opt-const-expr-hoisting=false --iree-opt-const-eval=false --iree-codegen-llvmgpu-enable-transform-dialect-jit=false --iree-codegen-llvmgpu-use-transform-dialect={1} &> {2}'.format(payload_ir_file, lowlevel_transform_ir_file, tmpvmfb)
-        run_cmd = ' iree-run-module --function=linalg_matmul --device=cuda --input=\"1024x128xf32=1\" --input=\"128x2048xf32=1\" --input=\"1024x2048xf32=0\" --module=\"{0}\" --output= '.format(tmpvmfb)
-
+        run_cmd = self.outputdir + '/../exe.pl' + ' \"iree-run-module --function=linalg_matmul --device=cuda --input=\"1024x128xf32=1\" --input=\"128x2048xf32=1\" --input=\"1024x2048xf32=0\" --module=\"{0}\" --output= \"'.format(tmpvmfb)
+        print(run_cmd)
 
 #######################################################################
 
@@ -103,22 +103,22 @@ class Plopper:
             compile_return_value = os.system(compile_cmd)
             if compile_return_value == 0:
                 #print("Compile Command executed successfully")
-                run_return_value = os.system(run_cmd)
-                if run_return_value == 0:
-                    #print("Run Command executed successfully")
-                    run_return_value = 1
-                else:
-                    print("Run Command failed with exit status:", os.WEXITSTATUS(run_return_value))
-
-#                execution_status = subprocess.run(run_cmd, shell=True, stdout=subprocess.PIPE)
-#                print("RUN EXECUTED")
-#                exetime = float(execution_status.stdout.decode('utf-8'))
-#                print("EXETIME = " + exetime)
-#                if exetime == 0:
-#                    print("RUN SUCCESS")
-#                    exetime = 1
+#                run_return_value = os.system(run_cmd)
+#                if run_return_value == 0:
+#                    #print("Run Command executed successfully")
+#                    run_return_value = 1
 #                else:
-#                    print("RUN ERROR")                        
+#                    print("Run Command failed with exit status:", os.WEXITSTATUS(run_return_value))
+
+                execution_status = subprocess.run(run_cmd, shell=True, stdout=subprocess.PIPE)
+                print("RUN EXECUTED")
+                exetime = float(execution_status.stdout.decode('utf-8'))
+                print("EXETIME = " + exetime)
+                if exetime == 0:
+                    print("RUN SUCCESS")
+                    exetime = 1
+                else:
+                    print("RUN ERROR")                        
             else:
                 print("Compile Command failed with exit status:", os.WEXITSTATUS(compile_return_value))
         else:
