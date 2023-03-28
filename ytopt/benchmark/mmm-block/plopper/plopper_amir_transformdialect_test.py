@@ -22,7 +22,8 @@ class Plopper:
     # Function to find the execution time of the interim file, and return the execution time as cost to the search module
     def findRuntime(self, x, params):
         interimfile = ""
-        exetime = 1
+    #   exetime = 1
+        run_return_value = 1
 
         # Generate intermediate file
         dictVal = self.createDict(x, params)
@@ -32,9 +33,6 @@ class Plopper:
         tmpoutput = self.outputdir + '/out_'+str(uuid.uuid4())+'.txt'
         payload_ir_file = sourcefile_dir + "/matmul.mlir"
         lowlevel_transform_ir_file = sourcefile_dir + "/build/" + "hi_spec.mlir"
-#        print("tmpvmfb = " + tmpvmfb)
-#        print("payload_ir_file = " + payload_ir_file)
-#        print("lowlevel_transform_ir_file = " + lowlevel_transform_ir_file)
 
 #        kernel_idx = self.sourcefile.rfind('/')
 #        kernel_dir = self.sourcefile[:kernel_idx]
@@ -54,16 +52,12 @@ class Plopper:
 #        compile_cmd += " && make && ./codegen "
 #        compile_cmd +=" && iree-compile " + payload_ir_file + " --iree-hal-target-backends=cuda --iree-opt-const-expr-hoisting=false --iree-opt-const-eval=false --iree-codegen-llvmgpu-enable-transform-dialect-jit=false --iree-codegen-llvmgpu-use-transform-dialect=" + lowlevel_transform_ir_file + " &> " + tmpvmfb
 #        run_cmd = 'iree-run-module --function=linalg_matmul --device=cuda --input=\"1024x128xf32=1\" --input=\"128x2048xf32=1\" --input=\"1024x2048xf32=0\" --module=' + tmpvmfb        #+ tmpoutput
-
-        build_cmd = "cmake -DCMAKE_CXX_FLAGS=\"-DAUTO_TUNER -DBX={0} -DBY={1} -DTY={2} -DTX={3}\" .. && make && ./codegen".format(dictVal['BX'], dictVal['BY'], dictVal['TX'], dictVal['TY'])
+        #print("ENV = " + os.environ['CUDA_VISIBLE_DEVICES'])
+        os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+        build_cmd = "cmake -DCMAKE_CXX_FLAGS=\"-DAUTO_TUNER -DBX={0} -DBY={1} -DTY={2} -DTX={3}\" .. > /dev/null && make > /dev/null && ./codegen".format(dictVal['BX'], dictVal['BY'], dictVal['TX'], dictVal['TY'])
         compile_cmd = 'iree-compile {0} --iree-hal-target-backends=cuda --iree-opt-const-expr-hoisting=false --iree-opt-const-eval=false --iree-codegen-llvmgpu-enable-transform-dialect-jit=false --iree-codegen-llvmgpu-use-transform-dialect={1} &> {2}'.format(payload_ir_file, lowlevel_transform_ir_file, tmpvmfb)
-        run_cmd = 'iree-run-module --function=linalg_matmul --device=cuda --input=\"1024x128xf32=1\" --input=\"128x2048xf32=1\" --input=\"1024x2048xf32=0\" --module=\"{0}\" '.format(tmpvmfb)
+        run_cmd = ' iree-run-module --function=linalg_matmul --device=cuda --input=\"1024x128xf32=1\" --input=\"128x2048xf32=1\" --input=\"1024x2048xf32=0\" --module=\"{0}\" --output= '.format(tmpvmfb)
 
-        with open("filename.sh", "w") as file: # xyz.txt is filename, w means write format
-          file.write("#!/bin/bash")
-          file.write('\n')
-          file.write(run_cmd) # write text xyz in the file
-    
 
 #######################################################################
 
@@ -100,25 +94,36 @@ class Plopper:
 # os.system
 
 # Execute the command in a subshell using os.system
-        print (build_cmd)
-        print (compile_cmd)
-        print (run_cmd)
+       # print (build_cmd)
+       # print (compile_cmd)
+       # print (run_cmd)
         return_value = os.system(build_cmd)
         if return_value == 0:
-            print("Build Command executed successfully")
+            #print("Build Command executed successfully")
             compile_return_value = os.system(compile_cmd)
             if compile_return_value == 0:
-                print("Compile Command executed successfully")
+                #print("Compile Command executed successfully")
                 run_return_value = os.system(run_cmd)
-                os.system("bash filename.sh")
                 if run_return_value == 0:
-                    print("Run Command executed successfully")
+                    #print("Run Command executed successfully")
+                    run_return_value = 1
                 else:
                     print("Run Command failed with exit status:", os.WEXITSTATUS(run_return_value))
+
+#                execution_status = subprocess.run(run_cmd, shell=True, stdout=subprocess.PIPE)
+#                print("RUN EXECUTED")
+#                exetime = float(execution_status.stdout.decode('utf-8'))
+#                print("EXETIME = " + exetime)
+#                if exetime == 0:
+#                    print("RUN SUCCESS")
+#                    exetime = 1
+#                else:
+#                    print("RUN ERROR")                        
             else:
                 print("Compile Command failed with exit status:", os.WEXITSTATUS(compile_return_value))
         else:
             print("Build Command failed with exit status:", os.WEXITSTATUS(return_value))
+        return run_return_value 
 ######################################################################33
 
 #        #Find the compilation status using subprocess
