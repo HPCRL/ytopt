@@ -21,6 +21,7 @@ class Plopper:
 
     # Function to find the execution time of the interim file, and return the execution time as cost to the search module
     def findRuntime(self, x, params):
+
         interimfile = ""
         exetime = 1
         #run_return_value = 1
@@ -34,30 +35,19 @@ class Plopper:
         payload_ir_file = sourcefile_dir + "/matmul.mlir"
         lowlevel_transform_ir_file = sourcefile_dir + "/build/" + "hi_spec.mlir"
 
-#        kernel_idx = self.sourcefile.rfind('/')
-#        kernel_dir = self.sourcefile[:kernel_idx]
-        # TODO: Change the file to work on and even command to compile
-        ##compile_cmd = 'gcc ' + kernel_dir +'/reduction_codegen_spec.mlir '
-        #compile_cmd += ' -D{0}={1}'.format('FILL_ME', dictVal['FILL_ME'])
-        #compile_cmd += ' -o ' + tmpvmfb
-        #run_cmd = kernel_dir + "/exe.pl " + tmpvmfb
-
         # Go in the htd-codegen/build folder.
         os.chdir(sourcefile_dir + "/build")
 
-
-#
-#        compile_cmd = "cd /uufs/chpc.utah.edu/common/home/u1418973/other/llvm_stuff/IREE/htd-codegen/build &&"
-#        compile_cmd = "cmake -DCMAKE_CXX_FLAGS=\"-DAUTO_TUNER -DBX={0} -DBY={1} -DTY={2} -DTX={3}\" ..".format(dictVal['BX'], dictVal['BY'], dictVal['TX'], dictVal['TY'])
-#        compile_cmd += " && make && ./codegen "
-#        compile_cmd +=" && iree-compile " + payload_ir_file + " --iree-hal-target-backends=cuda --iree-opt-const-expr-hoisting=false --iree-opt-const-eval=false --iree-codegen-llvmgpu-enable-transform-dialect-jit=false --iree-codegen-llvmgpu-use-transform-dialect=" + lowlevel_transform_ir_file + " &> " + tmpvmfb
-#        run_cmd = 'iree-run-module --function=linalg_matmul --device=cuda --input=\"1024x128xf32=1\" --input=\"128x2048xf32=1\" --input=\"1024x2048xf32=0\" --module=' + tmpvmfb        #+ tmpoutput
-        #print("ENV = " + os.environ['CUDA_VISIBLE_DEVICES'])
         os.environ['CUDA_VISIBLE_DEVICES'] = '0'
-        build_cmd = "cmake -DCMAKE_CXX_FLAGS=\"-DAUTO_TUNER -DBX={0} -DBY={1} -DTY={2} -DTX={3}\" .. > /dev/null && make > /dev/null && ./codegen".format(dictVal['BX'], dictVal['BY'], dictVal['TX'], dictVal['TY'])
+#################Dynamic        
+        build_cmd =  "cmake -DCMAKE_CXX_FLAGS=\"-DAUTO_TUNER "
+        # Replace values dynamically.
+        for key, value in dictVal.items() :
+            build_cmd += "-D{0}={1} ".format(key, value)
+        build_cmd += "\" .. > /dev/null && make > /dev/null && ./codegen"
+#################            
         compile_cmd = 'iree-compile {0} --iree-hal-target-backends=cuda --iree-opt-const-expr-hoisting=false --iree-opt-const-eval=false --iree-codegen-llvmgpu-enable-transform-dialect-jit=false --iree-codegen-llvmgpu-use-transform-dialect={1} &> {2}'.format(payload_ir_file, lowlevel_transform_ir_file, tmpvmfb)
         run_cmd = self.outputdir + '/../exe.pl' + ' \"iree-run-module --function=linalg_matmul --device=cuda --input=\"1024x128xf32=1\" --input=\"128x2048xf32=1\" --input=\"1024x2048xf32=0\" --module=\"{0}\" --output= \"'.format(tmpvmfb)
-        print(run_cmd)
 
 #######################################################################
 

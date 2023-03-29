@@ -33,7 +33,7 @@ input_dir_path = "/uufs/chpc.utah.edu/common/home/u1418973/other/llvm_stuff/IREE
 ##kernel_idx = dir_path.rfind('/')
 #kernel = dir_path[kernel_idx+1:]
 #TODO:replace me with the location to transform dialect script to change.
-obj = Plopper(input_dir_path+'/main.cpp',output_dir_path)
+obj = Plopper(input_dir_path + '/' + "main.cpp" ,output_dir_path)
 
 #x1=['FILL_ME']
 def myobj(point: dict):
