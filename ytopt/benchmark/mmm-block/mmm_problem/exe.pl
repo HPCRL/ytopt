@@ -13,9 +13,14 @@ foreach $filename (@ARGV) {
    @nn = (1..$nmax);
    for(@nn) {
     $retval = gettimeofday( ); 
-    system("$filename >/dev/null 2>&1");
+    my $exit_code=system("$filename >/dev/null 2>&1");
     $tt = gettimeofday( );
-    $ttotal = $tt - $retval;
+
+    if($exit_code!=0)
+    {
+      exit($exit_code >> 8);
+    }
+   $ttotal = $tt - $retval;
     $ssum = $ssum + $ttotal;
    }
    $avg = $ssum / $nmax;

@@ -14,10 +14,10 @@ from plopper_amir_transformdialect_test import Plopper
 cs = CS.ConfigurationSpace(seed=1234)
 #block size for openmp dynamic schedule
 # p0= CSH.OrdinalHyperparameter(name='BLOCK_SIZE', sequence=['1','2','3','4','5','6','7','8','9','10'], default_value='5')
-p0= CSH.UniformIntegerHyperparameter(name='BX', lower=16, upper=64, default_value=16)
-p1= CSH.UniformIntegerHyperparameter(name='BY', lower=16, upper=64, default_value=16)
-p2= CSH.UniformIntegerHyperparameter(name='TX', lower=16, upper=64, default_value=16)
-p3= CSH.UniformIntegerHyperparameter(name='TY', lower=16, upper=64, default_value=16)
+p0= CSH.UniformIntegerHyperparameter(name='BX', lower=0, upper=256)
+p1= CSH.UniformIntegerHyperparameter(name='BY', lower=0, upper=256)
+p2= CSH.UniformIntegerHyperparameter(name='TX', lower=0, upper=256)
+p3= CSH.UniformIntegerHyperparameter(name='TY', lower=0, upper=256)
 cs.add_hyperparameters([p0, p1, p2, p3])
 
 # problem space

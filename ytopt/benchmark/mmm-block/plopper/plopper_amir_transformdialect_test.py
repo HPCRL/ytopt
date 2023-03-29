@@ -22,8 +22,8 @@ class Plopper:
     # Function to find the execution time of the interim file, and return the execution time as cost to the search module
     def findRuntime(self, x, params):
         interimfile = ""
-    #   exetime = 1
-        run_return_value = 1
+        exetime = 1
+        #run_return_value = 1
 
         # Generate intermediate file
         dictVal = self.createDict(x, params)
@@ -110,20 +110,21 @@ class Plopper:
 #                else:
 #                    print("Run Command failed with exit status:", os.WEXITSTATUS(run_return_value))
 
-                execution_status = subprocess.run(run_cmd, shell=True, stdout=subprocess.PIPE)
-                print("RUN EXECUTED")
-                exetime = float(execution_status.stdout.decode('utf-8'))
-                print("EXETIME = " + exetime)
-                if exetime == 0:
-                    print("RUN SUCCESS")
-                    exetime = 1
+                execution_status = subprocess.run(run_cmd, shell=True, stdout=subprocess.PIPE, encoding= 'utf-8')
+                if execution_status.returncode == 0:
+                    exetime = float(execution_status.stdout)
+                    if exetime == 0:
+                        exetime = 1
                 else:
-                    print("RUN ERROR")                        
+                    print("RUN ERROR")
+                    print (execution_status.returncode)
+                    raise Exception("Error in commands")
             else:
                 print("Compile Command failed with exit status:", os.WEXITSTATUS(compile_return_value))
         else:
             print("Build Command failed with exit status:", os.WEXITSTATUS(return_value))
-        return run_return_value 
+#        return run_return_value 
+        return exetime
 ######################################################################33
 
 #        #Find the compilation status using subprocess
