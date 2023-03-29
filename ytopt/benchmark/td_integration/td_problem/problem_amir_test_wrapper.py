@@ -32,7 +32,6 @@ for param in input_data['configuration']:
     upper = int(param['upper'])
     default_value = int(param['default_value'])
     cs.add_hyperparameter(CSH.UniformIntegerHyperparameter(name, lower, upper, default_value))
-print(cs)
 ##############################################################################
 
 # problem space
