@@ -1,0 +1,37 @@
+{
+   "bookkeeping": {
+       "autotuner_target_dir": "/uufs/chpc.utah.edu/common/home/u1418973/other/llvm_stuff/IREE/htd-codegen/",
+       "autotuner_target_file": "main.cpp"
+   },
+   "configuration" : [
+       {
+	   "type": "categorical",
+	   "choices": ["nothing", "dynamic", "static"],
+           "name": "BX",
+           "lower": "0",
+           "upper": "32",
+           "default_value": "static"
+       },
+       {
+	   "type": "integer",
+           "name": "BY",
+           "lower": "0",
+           "upper": "32",
+           "default_value": "16"
+       },
+       {
+	   "type": "integer",
+           "name": "TX",
+           "lower": "0",
+           "upper": "32",
+           "default_value": "16"
+       },
+       {
+	   "type": "integer",
+           "name": "TY",
+           "lower": "0",
+           "upper": "32",
+           "default_value": "16"
+       }
+   ]
+}
