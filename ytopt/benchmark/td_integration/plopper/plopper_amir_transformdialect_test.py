@@ -34,16 +34,21 @@ class Plopper:
 
         # Go in the htd-codegen/build folder.
         os.chdir(sourcefile_dir + "/build")
+        ireelogfile = self.outputdir + "/../ireelogytopt.log"
         os.environ['CUDA_VISIBLE_DEVICES'] = '0'
         #################Dynamic        
         build_cmd =  "cmake -DCMAKE_CXX_FLAGS=\"-DAUTO_TUNER "
         # Replace values dynamically.
         for key, value in dictVal.items() :
             build_cmd += "-D{0}={1} ".format(key, value)
-        build_cmd += "\" .. > /dev/null && make > /dev/null && ./codegen"
+        build_cmd += "\" .. &>>" + ireelogfile + " && make &>>" + ireelogfile + " && ./codegen"
+
         #################            
         compile_cmd = 'iree-compile {0} --iree-hal-target-backends=cuda --iree-opt-const-expr-hoisting=false --iree-opt-const-eval=false --iree-codegen-llvmgpu-enable-transform-dialect-jit=false --iree-codegen-llvmgpu-use-transform-dialect={1} &> {2}'.format(payload_ir_file, lowlevel_transform_ir_file, tmpvmfb)
         run_cmd = self.outputdir + '/../exe.pl' + ' \"iree-run-module --function=linalg_matmul --device=cuda --input=\"1024x128xf32=1\" --input=\"128x2048xf32=1\" --input=\"1024x2048xf32=0\" --module=\"{0}\" --output= \"'.format(tmpvmfb)
+
+        #######################################################################
+        # Logger
 
         #######################################################################
         # Execute the command in a subshell using os.system
@@ -59,9 +64,28 @@ class Plopper:
                 else:
                     print("Run command failed with exit status:")
                     print (execution_status.returncode)
+                    with open(ireelogfile, "a") as myfile:
+                        myfile.write("###########################")
+                        myfile.write(compile_cmd)
+                        myfile.write("-----------------")
+                        myfile.write(build_cmd)
+                        myfile.write("-----------------")
+                        myfile.write(run_cmd) 
+                        myfile.write("-----------------")
+                        output = execution_status.stdout.read()
+                        myfile.write(output)
                     raise Exception("Error in commands")
             else:
                 print("Compile Command failed with exit status:", os.WEXITSTATUS(compile_return_value))
+                with open(ireelogfile, "a") as myfile:
+                    myfile.write("###########################")
+                    myfile.write(compile_cmd)
+                    myfile.write("-----------------")
+                    myfile.write(build_cmd)
+                    myfile.write("-----------------")
+                    myfile.write(run_cmd)
+                    myfile.write("-----------------")
+                    myfile.write(os.system(compile_cmd))
                 raise Exception("Error in compile commands")
         else:
             print("Build Command failed with exit status:", os.WEXITSTATUS(return_value))

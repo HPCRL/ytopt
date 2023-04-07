@@ -5,32 +5,31 @@
    },
    "configuration" : [
        {
-	   "type": "categorical",
-	   "choices": ["nothing", "dynamic", "static"],
+	   "type": "integer",
            "name": "BX",
-           "lower": "0",
-           "upper": "32",
-           "default_value": "static"
+           "lower": "1",
+           "upper": "256",
+           "default_value": "15"
        },
        {
 	   "type": "integer",
            "name": "BY",
-           "lower": "0",
-           "upper": "32",
+           "lower": "1",
+           "upper": "256",
            "default_value": "16"
        },
        {
 	   "type": "integer",
            "name": "TX",
-           "lower": "0",
-           "upper": "32",
+           "lower": "1",
+           "upper": "256",
            "default_value": "16"
        },
        {
 	   "type": "integer",
            "name": "TY",
-           "lower": "0",
-           "upper": "32",
+           "lower": "1",
+           "upper": "256",
            "default_value": "16"
        }
    ]
