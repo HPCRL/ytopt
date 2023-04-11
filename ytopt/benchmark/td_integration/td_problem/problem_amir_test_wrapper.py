@@ -16,10 +16,12 @@ input_json_file_name = "input_config.json"
 with open(input_json_file_name, 'r') as f:
     input_data = json.load(f)
 ##############################Bookkeeping part#################################
-input_dir_path = input_data['bookkeeping']['autotuner_target_dir']
-input_hl_td_file_name = input_data['bookkeeping']['autotuner_target_file']
+bookkeeping = input_data['bookkeeping']
+autotuner_target_dir = bookkeeping['autotuner_target_dir']
+autotuner_highlevel_td_spec_file = bookkeeping['autotuner_highlevel_td_spec_file']
+
 output_dir_path = os.path.dirname(os.path.realpath(__file__))
-obj = Plopper(input_dir_path + '/' + input_hl_td_file_name ,output_dir_path)
+obj = Plopper(autotuner_target_dir + '/' + autotuner_highlevel_td_spec_file , output_dir_path, bookkeeping)
 ##############################Configuration#####################################
 
 # Create a ConfigurationSpace object

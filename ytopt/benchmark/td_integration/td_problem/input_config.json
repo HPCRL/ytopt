@@ -1,7 +1,24 @@
 {
    "bookkeeping": {
        "autotuner_target_dir": "/uufs/chpc.utah.edu/common/home/u1418973/other/llvm_stuff/IREE/htd-codegen/",
-       "autotuner_target_file": "main.cpp"
+       "autotuner_function_to_target" : "linalg_matmul",
+       "autotuner_payload_ir_file" : "matmul.mlir",
+       "autotuner_highlevel_td_spec_file" : "main.cpp",
+       "autotuner_lowlevel_td_spec_file" : "hi_spec.mlir",
+       "autotuner_input" : [
+               {
+                "shape" : "1024x128xf32",
+                "value" : "1"
+               },
+               {
+                "shape" : "128x2048xf32",
+                "value" : "1"
+               },
+	       {
+		"shape" : "1024x2048xf32",
+		"value" : "0"
+	       }
+       ]
    },
    "configuration" : [
        {

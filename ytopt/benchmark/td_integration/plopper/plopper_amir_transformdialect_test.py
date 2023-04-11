@@ -3,7 +3,12 @@ import fileinput
 from subprocess import *
 
 class Plopper:
-    def __init__(self,sourcefile,outputdir):
+    def __init__(self,sourcefile,outputdir, bookkeeping):
+        self.autotuner_function_to_target = bookkeeping['autotuner_function_to_target']
+        self.autotuner_lowlevel_td_spec_file = bookkeeping['autotuner_lowlevel_td_spec_file']
+        self.autotuner_input = bookkeeping['autotuner_input']
+        self.autotuner_payload_ir_file = bookkeeping['autotuner_payload_ir_file']
+
         # Initializing global variables
         self.sourcefile = sourcefile
         self.outputdir = outputdir+"/tmp_files"
@@ -25,12 +30,12 @@ class Plopper:
 
         # Generate intermediate file
         dictVal = self.createDict(x, params)
-        sourcefile_dir = output_dir_path = os.path.dirname(os.path.realpath(self.sourcefile))
+        sourcefile_dir = os.path.dirname(os.path.realpath(self.sourcefile))
         #compile and find the execution time
         tmpvmfb = self.outputdir + '/tmp_'+str(uuid.uuid4())+'.vmfb'
         tmpoutput = self.outputdir + '/out_'+str(uuid.uuid4())+'.txt'
-        payload_ir_file = sourcefile_dir + "/matmul.mlir"
-        lowlevel_transform_ir_file = sourcefile_dir + "/build/" + "hi_spec.mlir"
+        payload_ir_file = sourcefile_dir + "/" + self.autotuner_payload_ir_file
+        lowlevel_transform_ir_file = sourcefile_dir + "/build/" + self.autotuner_lowlevel_td_spec_file
 
         # Go in the htd-codegen/build folder.
         os.chdir(sourcefile_dir + "/build")
@@ -45,7 +50,20 @@ class Plopper:
 
         #################            
         compile_cmd = 'iree-compile {0} --iree-hal-target-backends=cuda --iree-opt-const-expr-hoisting=false --iree-opt-const-eval=false --iree-codegen-llvmgpu-enable-transform-dialect-jit=false --iree-codegen-llvmgpu-use-transform-dialect={1} &> {2}'.format(payload_ir_file, lowlevel_transform_ir_file, tmpvmfb)
-        run_cmd = self.outputdir + '/../exe.pl' + ' \"iree-run-module --function=linalg_matmul --device=cuda --input=\"1024x128xf32=1\" --input=\"128x2048xf32=1\" --input=\"1024x2048xf32=0\" --module=\"{0}\" --output= \"'.format(tmpvmfb)
+        #########RUN Command ###############
+
+        run_cmd = self.outputdir + '/../exe.pl' + ' \"iree-run-module --function={} --device=cuda '.format(self.autotuner_function_to_target)
+
+        # Loop through the input values in autotuner_input and add them to the run_cmd string
+        for input_value in self.autotuner_input:
+            input_shape = input_value['shape']
+            input_value = input_value['value']
+            input_str = '{}={}'.format(input_shape, input_value)
+            run_cmd += ' --input=\"{}\"'.format(input_str)
+
+        run_cmd += ' --module=\"{0}\" --output= \"'.format(tmpvmfb)
+
+        #old_run_cmd = self.outputdir + '/../exe.pl' + ' \"iree-run-module --function=linalg_matmul --device=cuda --input=\"1024x128xf32=1\" --input=\"128x2048xf32=1\" --input=\"1024x2048xf32=0\" --module=\"{0}\" --output= \"'.format(tmpvmfb)
 
         #######################################################################
         # Logger
