@@ -54,32 +54,30 @@ class Plopper:
         build_cmd += (
             '" .. &>>' + ireelogfile + " && make &>>" + ireelogfile + " && ./codegen"
         )
-        print(build_cmd)
+        #print(build_cmd)
         #################COMPILE
         compile_cmd = "iree-compile {0} --iree-hal-target-backends=cuda --iree-opt-const-expr-hoisting=false --iree-opt-const-eval=false --iree-codegen-llvmgpu-enable-transform-dialect-jit=false --iree-codegen-llvmgpu-use-transform-dialect={1} &> {2}".format(
             payload_ir_file, lowlevel_transform_ir_file, tmpvmfb
         )
         #########RUN Command ###############
-        run_cmd = (
-            self.outputdir
-            + "/../exe.pl"
-            + ' "iree-run-module --function={} --device=cuda '.format(
-                self.autotuner_function_to_target
-            )
-        )
+        run_cmd = 'ncu -f --set full iree-run-module --function={} --device=cuda '.format(
+                self.autotuner_function_to_target)
         # Loop through the input values in autotuner_input and add them to the run_cmd string
         for input_value in self.autotuner_input:
             input_shape = input_value["shape"]
             input_value = input_value["value"]
             input_str = "{}={}".format(input_shape, input_value)
             run_cmd += ' --input="{}"'.format(input_str)
-        run_cmd += ' --module="{0}" --output= "'.format(tmpvmfb)
+
+        run_cmd += ' --module="{0}" '.format(tmpvmfb)
+        run_cmd +=  ''' --output= | grep 'Duration' | awk '{print $3 " " $2}' | awk '{max = (max < $1) ? $1 : max} END {if ($2 == "msecond") {max *= 1000}; print max}' '''
 
         # old_run_cmd = self.outputdir + '/../exe.pl' + ' \"iree-run-module --function=linalg_matmul --device=cuda --input=\"1024x128xf32=1\" --input=\"128x2048xf32=1\" --input=\"1024x2048xf32=0\" --module=\"{0}\" --output= \"'.format(tmpvmfb)
 
         #######################################################################
         # Logger
-
+        #print(compile_cmd)
+        #print(run_cmd)
         # Execute the command in a subshell using os.system
         return_value = os.system(build_cmd)
         if return_value == 0:
