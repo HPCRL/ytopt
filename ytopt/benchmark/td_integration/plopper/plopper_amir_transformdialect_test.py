@@ -47,14 +47,14 @@ class Plopper:
         ireelogfile = self.outputdir + "/../ireelogytopt.log"
         #################BUILD
         os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-        build_cmd = 'cmake -DCMAKE_CXX_FLAGS="-DAUTO_TUNER '
+        build_cmd = 'rm -rf * && cmake -DCMAKE_CXX_FLAGS="-DAUTO_TUNER '
         # Replace values dynamically.
         for key, value in dictVal.items():
             build_cmd += "-D{0}={1} ".format(key, value)
         build_cmd += (
             '" .. &>>' + ireelogfile + " && make &>>" + ireelogfile + " && ./codegen"
         )
-
+        print(build_cmd)
         #################COMPILE
         compile_cmd = "iree-compile {0} --iree-hal-target-backends=cuda --iree-opt-const-expr-hoisting=false --iree-opt-const-eval=false --iree-codegen-llvmgpu-enable-transform-dialect-jit=false --iree-codegen-llvmgpu-use-transform-dialect={1} &> {2}".format(
             payload_ir_file, lowlevel_transform_ir_file, tmpvmfb

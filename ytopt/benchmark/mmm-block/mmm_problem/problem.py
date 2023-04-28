@@ -8,8 +8,7 @@ from skopt.space import Real, Integer, Categorical
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(1, os.path.dirname(HERE)+ '/plopper')
-# TODO: Changed here to use custom plopper
-from plopper_transformdialect_test import Plopper
+from plopper import Plopper
 
 # create an object of ConfigSpace
 cs = CS.ConfigurationSpace(seed=1234)

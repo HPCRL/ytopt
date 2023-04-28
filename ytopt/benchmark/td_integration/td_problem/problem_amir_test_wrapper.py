@@ -35,16 +35,19 @@ cs = CS.ConfigurationSpace(seed=1234)
 # Add hyperparameters to the ConfigurationSpace object
 for param in input_data["configuration"]:
     name_t = param["name"]
-    lower_t = int(param["lower"])
-    upper_t = int(param["upper"])
     type_t = param["type"]
 
     if type_t == "integer":
+        lower_t = int(param["lower"])
+        upper_t = int(param["upper"])
         default_value_t = int(param["default_value"])
         cs.add_hyperparameter(
             CSH.UniformIntegerHyperparameter(name_t, lower_t, upper_t, default_value_t)
         )
     elif type_t == "float":
+        lower_t = float(param["lower"])
+        upper_t = float(param["upper"])
+
         default_value_t = float(param["default_value"])
         cs.add_hyperparameter(
             CSH.UniformFloatHyperparameter(name_t, lower_t, upper_t, default_value_t)

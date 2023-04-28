@@ -1,53 +1,56 @@
 {
    "bookkeeping": {
-       "autotuner_target_dir": "/uufs/chpc.utah.edu/common/home/u1418973/other/llvm_stuff/IREE/htd-codegen/",
+       "autotuner_target_dir": "/uufs/chpc.utah.edu/common/home/u1419116/projects/hlt/ytopt/htd-codegen",
        "autotuner_function_to_target" : "linalg_matmul",
-       "autotuner_payload_ir_file" : "matmul.mlir",
+       "autotuner_payload_ir_file" : "matmul_M1024_K128_N1024.mlir",
        "autotuner_highlevel_td_spec_file" : "main.cpp",
-       "autotuner_lowlevel_td_spec_file" : "hi_spec.mlir",
+       "autotuner_lowlevel_td_spec_file" : "matmul_gpu_spec_tvm.mlir",
        "autotuner_input" : [
                {
                 "shape" : "1024x128xf32",
                 "value" : "1"
                },
                {
-                "shape" : "128x2048xf32",
+                "shape" : "128x1024xf32",
                 "value" : "1"
                },
 	       {
-		"shape" : "1024x2048xf32",
+		"shape" : "1024x1024xf32",
 		"value" : "0"
 	       }
        ]
    },
    "configuration" : [
        {
-	   "type": "integer",
-           "name": "BX",
-           "lower": "1",
-           "upper": "256",
-           "default_value": "15"
+	   "type": "categorical",
+           "choices": [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],
+           "default_value": 16,
+	   "name": "BX"
        },
        {
-	   "type": "integer",
            "name": "BY",
-           "lower": "1",
-           "upper": "256",
-           "default_value": "16"
+	              "type": "categorical",
+           "choices": [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],
+           "default_value": 16
        },
        {
-	   "type": "integer",
            "name": "TX",
-           "lower": "1",
-           "upper": "256",
-           "default_value": "16"
+	   "type": "categorical",
+           "choices": [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],
+           "default_value": 16
        },
        {
-	   "type": "integer",
-           "name": "TY",
-           "lower": "1",
-           "upper": "256",
-           "default_value": "16"
+	   "type": "categorical",
+           "choices": [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],
+           "default_value": 16,
+	   "name": "TY"
+       },
+              {
+           "type": "categorical",
+           "name": "TK",
+           "choices": [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],
+           "default_value": 16
        }
+
    ]
 }
