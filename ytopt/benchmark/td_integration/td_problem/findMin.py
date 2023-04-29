@@ -6,7 +6,7 @@ from sklearn.linear_model import LogisticRegression
 dataframe = pandas.read_csv("results.csv")
 array = dataframe.values
 # Create a boolean mask of rows where column 4 is not -1
-mask = array[:, 5] != -1
+mask = array[:, 5] != float("inf")
 # Create a new array that only contains the rows that meet the condition
 new_array = array[mask, :]
 x = new_array[:,5]

@@ -85,12 +85,15 @@ def myobj(point: dict):
         print("CONFIG:", point)
         txvalue = point["TX"]
         tyvalue = point["TY"]
+        bxvalue = point["BX"]
+        byvalue = point["BY"]
+
         totalthreads = txvalue * tyvalue
         params = {k.upper(): v for k, v in point.items()}
-        if totalthreads <= 1024 and totalthreads > 0:
+        if bxvalue * byvalue >= 16 and txvalue * tyvalue >=16 and totalthreads <= 1024 and totalthreads > 0:
             result = obj.findRuntime(value, params)
         else:
-            result = -1
+            result = float('+inf')
         return result
 
     x = np.array(list(point.values()))
