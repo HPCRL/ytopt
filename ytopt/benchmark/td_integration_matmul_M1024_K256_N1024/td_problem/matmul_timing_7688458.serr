@@ -1,0 +1,26 @@
+2023-04-29 01:52:22,279	INFO worker.py:1625 -- Started a local Ray instance.
+[2m[36m(pid=2594081)[0m [2023-04-29 02:02:23,134 E 2594081 2626975] logging.cc:97: Unhandled exception: N5boost10wrapexceptINS_6system12system_errorEEE. what(): thread: Resource temporarily unavailable [system:11]
+Exception in thread ray_print_logs:
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+  File "/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/threading.py", line 946, in run
+    self._target(*self._args, **self._kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 868, in print_logs
+    data = subscriber.poll()
+  File "/uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/ray/_private/gcs_pubsub.py", line 362, in poll
+    self._poll_locked(timeout=timeout)
+  File "/uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/ray/_private/gcs_pubsub.py", line 249, in _poll_locked
+    fut = self._stub.GcsSubscriberPoll.future(
+  File "/uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/grpc/_channel.py", line 972, in future
+    call = self._managed_call(
+  File "/uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/grpc/_channel.py", line 1306, in create
+    _run_channel_spin_thread(state)
+  File "/uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/grpc/_channel.py", line 1270, in _run_channel_spin_thread
+    channel_spin_thread.start()
+  File "src/python/grpcio/grpc/_cython/_cygrpc/fork_posix.pyx.pxi", line 117, in grpc._cython.cygrpc.ForkManagedThread.start
+  File "/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/threading.py", line 928, in start
+    _start_new_thread(self._bootstrap, ())
+RuntimeError: can't start new thread
+slurmstepd: error: *** JOB 7688458 ON notch371 CANCELLED AT 2023-04-29T11:23:40 ***
+slurmstepd: error: Detected 5 oom-kill event(s) in StepId=7688458.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.

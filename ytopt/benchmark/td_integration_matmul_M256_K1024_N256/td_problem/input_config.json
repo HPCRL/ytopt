@@ -1,0 +1,51 @@
+{
+   "bookkeeping": {
+       "autotuner_target_dir": "/uufs/chpc.utah.edu/common/home/u1419116/projects/hlt/ytopt/htd-codegen_M256_K1024_N256",
+       "autotuner_function_to_target" : "linalg_matmul",
+       "autotuner_payload_ir_file" : "test/mm/input_mlir/matmul_M256_K1024_N256.mlir",
+       "autotuner_highlevel_td_spec_file" : "main.cpp",
+       "autotuner_lowlevel_td_spec_file" : "matmul_gpu_spec_tvm.mlir",
+       "autotuner_input" : [
+            {
+                "shape" : "256x1024xf32=1",
+                "value" : "1"
+            },
+            {
+                "shape" : "1024x256xf32=1",
+                "value" : "1"
+            },
+            {
+                "shape" : "256x256xf32=0",
+                "value" : "0"
+            }
+       ]
+   },
+   "configuration" : [
+       {
+        "type": "categorical",
+        "choices": [1, 2, 4, 8, 16, 32, 64, 128, 256],
+        "name": "BX"
+       },
+       {
+        "name": "BY",
+        "type": "categorical",
+        "choices": [1, 2, 4, 8, 16, 32, 64, 128, 256]
+       },
+       {
+        "name": "TX",
+        "type": "categorical",
+        "choices": [1, 2, 4, 8, 16, 32, 64, 128, 256]
+       },
+       {
+	    "type": "categorical",
+        "choices": [1, 2, 4, 8, 16, 32, 64, 128, 256],
+	    "name": "TY"
+       },
+       {
+        "type": "categorical",
+        "name": "TK",
+        "choices": [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]
+       }
+
+   ]
+}

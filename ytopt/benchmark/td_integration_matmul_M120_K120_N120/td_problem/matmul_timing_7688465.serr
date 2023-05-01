@@ -1,0 +1,48 @@
+2023-04-29 01:52:24,314	INFO worker.py:1625 -- Started a local Ray instance.
+Exception in thread ray_print_logs:
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+  File "/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/threading.py", line 946, in run
+    self._target(*self._args, **self._kwargs)
+  File "/uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 868, in print_logs
+    data = subscriber.poll()
+  File "/uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/ray/_private/gcs_pubsub.py", line 362, in poll
+    self._poll_locked(timeout=timeout)
+  File "/uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/ray/_private/gcs_pubsub.py", line 249, in _poll_locked
+    fut = self._stub.GcsSubscriberPoll.future(
+  File "/uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/grpc/_channel.py", line 972, in future
+    call = self._managed_call(
+  File "/uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/grpc/_channel.py", line 1306, in create
+    _run_channel_spin_thread(state)
+  File "/uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/grpc/_channel.py", line 1270, in _run_channel_spin_thread
+    channel_spin_thread.start()
+  File "src/python/grpcio/grpc/_cython/_cygrpc/fork_posix.pyx.pxi", line 117, in grpc._cython.cygrpc.ForkManagedThread.start
+  File "/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/threading.py", line 928, in start
+    _start_new_thread(self._bootstrap, ())
+RuntimeError: can't start new thread
+2023-04-29 02:03:52,304	WARNING worker.py:1986 -- The node with node id: a43efbd09d48d29c7614c028a7da629df3d613eaf426a6c7c32ed23a and address: 10.242.76.118 and node name: 10.242.76.118 has been marked dead because the detector has missed too many heartbeats from it. This can happen when a 	(1) raylet crashes unexpectedly (OOM, preempted node, etc.) 
+	(2) raylet has lagging heartbeats due to slow network or busy workload.
+2023-04-29 02:03:54,061	WARNING worker.py:1986 -- Raylet is terminated: ip=10.242.76.118, id=a43efbd09d48d29c7614c028a7da629df3d613eaf426a6c7c32ed23a. Termination is unexpected. Possible reasons include: (1) SIGKILL by the user or system OOM killer, (2) Invalid memory access from Raylet causing SIGSEGV or SIGBUS, (3) Other termination signals. Last 20 lines of the Raylet logs:
+    [state-dump] 
+    [state-dump] 
+    [2023-04-29 02:03:52,312 I 2447927 2447927] (raylet) accessor.cc:611: Received notification for node id = a43efbd09d48d29c7614c028a7da629df3d613eaf426a6c7c32ed23a, IsAlive = 0
+    [2023-04-29 02:03:52,381 C 2447927 2447927] (raylet) node_manager.cc:1039: [Timeout] Exiting because this node manager has mistakenly been marked as dead by the GCS: GCS failed to check the health of this node for 5 times. This is likely because the machine or raylet has become overloaded.
+    *** StackTrace Information ***
+    /uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/ray/core/src/ray/raylet/raylet(+0x52ed5a) [0x5645fa990d5a] ray::operator<<()
+    /uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/ray/core/src/ray/raylet/raylet(+0x530742) [0x5645fa992742] ray::SpdLogMessage::Flush()
+    /uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/ray/core/src/ray/raylet/raylet(+0x530a57) [0x5645fa992a57] ray::RayLog::~RayLog()
+    /uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/ray/core/src/ray/raylet/raylet(+0x29a1f3) [0x5645fa6fc1f3] ray::raylet::NodeManager::NodeRemoved()
+    /uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/ray/core/src/ray/raylet/raylet(+0x409ef7) [0x5645fa86bef7] ray::gcs::NodeInfoAccessor::HandleNotification()
+    /uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/ray/core/src/ray/raylet/raylet(+0x50dcf6) [0x5645fa96fcf6] EventTracker::RecordExecution()
+    /uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/ray/core/src/ray/raylet/raylet(+0x4a025e) [0x5645fa90225e] std::_Function_handler<>::_M_invoke()
+    /uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/ray/core/src/ray/raylet/raylet(+0x4a07b6) [0x5645fa9027b6] boost::asio::detail::completion_handler<>::do_complete()
+    /uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/ray/core/src/ray/raylet/raylet(+0xa8d73b) [0x5645faeef73b] boost::asio::detail::scheduler::do_run_one()
+    /uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/ray/core/src/ray/raylet/raylet(+0xa8fcc9) [0x5645faef1cc9] boost::asio::detail::scheduler::run()
+    /uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/ray/core/src/ray/raylet/raylet(+0xa90182) [0x5645faef2182] boost::asio::io_context::run()
+    /uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/ray/core/src/ray/raylet/raylet(+0x16705a) [0x5645fa5c905a] main
+    /lib64/libc.so.6(__libc_start_main+0xf3) [0x14a18851dca3] __libc_start_main
+    /uufs/chpc.utah.edu/common/home/u1419116/.local/lib/python3.10/site-packages/ray/core/src/ray/raylet/raylet(+0x1ae457) [0x5645fa610457]
+    
+
+slurmstepd: error: *** JOB 7688465 ON notch372 CANCELLED AT 2023-04-29T11:23:47 ***

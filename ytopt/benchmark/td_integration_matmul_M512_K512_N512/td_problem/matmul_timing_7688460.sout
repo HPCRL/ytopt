@@ -1,0 +1,10 @@
+Performance (accuracy) summary based on 24 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.008058017727639002
+Mean:  1.3350443151043208e-307
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+[  2.         16.         64.        128.          2.        124.1
+ 485.6072185]

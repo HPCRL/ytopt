@@ -1,0 +1,86 @@
+{
+    "bookkeeping": {
+        "autotuner_target_dir": "/uufs/chpc.utah.edu/common/home/u1419116/projects/hlt/ytopt/htd-codegen_conv2d_nchw_N1_H56_W56_CO64_CI64_KH3_KW3_ST_1_padding_1",
+        "autotuner_function_to_target" : "conv_2d_nchw_fchw",
+        "autotuner_payload_ir_file" : "test/conv2d_nchw/input_mlir/conv2d_nchw_N1_H56_W56_CO64_CI64_KH3_KW3_ST_1_padding_1.mlir",
+        "autotuner_highlevel_td_spec_file" : "main.cpp",
+        "autotuner_lowlevel_td_spec_file" : "conv2d_gpu_spec_tvm.mlir",
+        "autotuner_input" : [
+             {
+                 "shape" : "1x64x58x58xf32=1",
+                 "value" : "1"
+             },
+             {
+                 "shape" : "64x64x3x3xf32=1",
+                 "value" : "1"
+             },
+             {
+                 "shape" : "1x64x56x56xf32=0",
+                 "value" : "0"
+             }
+        ]
+    },
+    "configuration" : [
+         {
+         "name": "BN",
+         "type": "categorical",
+         "choices": [1]
+         },
+         {
+         "name": "TN",
+         "type": "categorical",
+         "choices": [1]
+         },
+         {
+         "name": "BF",
+         "type": "categorical",
+         "choices": [1, 2, 4, 8, 16, 32, 64]
+         },
+         {
+         "name": "TF",
+         "type": "categorical",
+         "choices": [1, 2, 4, 8, 16, 32, 64]
+         },
+         {
+         "name": "BOH",
+         "type": "categorical",
+         "choices": [1, 2, 4, 7, 8, 14, 28, 56]
+         },
+         {
+         "name": "TOH",
+         "type": "categorical",
+         "choices": [1, 2, 4, 7, 8, 14, 28, 56]
+         },
+         {
+         "name": "BOW",
+         "type": "categorical",
+         "choices": [1, 2, 4, 7, 8, 14, 28, 56]
+         },
+         {
+         "name": "TOW",
+         "type": "categorical",
+         "choices": [1, 2, 4, 7, 8, 14, 28, 56]
+         },
+         {
+         "name": "TC",
+         "type": "categorical",
+         "choices": [1, 2, 4, 8, 16, 32, 64]
+         },
+         {
+         "name": "TKH",
+         "type": "categorical",
+         "choices": [1, 3]
+         },
+         {
+         "name": "TKW",
+         "type": "categorical",
+         "choices": [1, 3]
+         },
+         {
+        "name": "VECTORIZATION",
+        "type": "categorical",
+        "choices": [0, 1]
+        }
+    ]
+ }
+ 

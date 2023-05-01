@@ -1,0 +1,51 @@
+{
+   "bookkeeping": {
+       "autotuner_target_dir": "/uufs/chpc.utah.edu/common/home/u1419116/projects/hlt/ytopt/htd-codegen_M1000_K1000_N1000",
+       "autotuner_function_to_target" : "linalg_matmul",
+       "autotuner_payload_ir_file" : "test/mm/input_mlir/matmul_M1000_K1000_N1000.mlir",
+       "autotuner_highlevel_td_spec_file" : "main.cpp",
+       "autotuner_lowlevel_td_spec_file" : "matmul_gpu_spec_tvm.mlir",
+       "autotuner_input" : [
+            {
+                "shape" : "1000x1000xf32=1",
+                "value" : "1"
+            },
+            {
+                "shape" : "1000x1000xf32=1",
+                "value" : "1"
+            },
+            {
+                "shape" : "1000x1000xf32=0",
+                "value" : "0"
+            }
+       ]
+   },
+   "configuration" : [
+       {
+        "type": "categorical",
+        "choices": [1, 2, 4, 5, 8, 10, 20, 25, 40, 50, 100, 125, 200, 250, 500, 1000],
+        "name": "BX"
+       },
+       {
+        "name": "BY",
+        "type": "categorical",
+        "choices": [1, 2, 4, 5, 8, 10, 20, 25, 40, 50, 100, 125, 200, 250, 500, 1000]
+       },
+       {
+        "name": "TX",
+        "type": "categorical",
+        "choices": [1, 2, 4, 5, 8, 10, 20, 25, 40, 50, 100, 125, 200, 250, 500, 1000]
+       },
+       {
+	    "type": "categorical",
+        "choices": [1, 2, 4, 5, 8, 10, 20, 25, 40, 50, 100, 125, 200, 250, 500, 1000],
+	    "name": "TY"
+       },
+       {
+        "type": "categorical",
+        "name": "TK",
+        "choices": [1, 2, 4, 5, 8, 10, 20, 25, 40, 50, 100, 125, 200, 250, 500, 1000]
+       }
+
+   ]
+}
