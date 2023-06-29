@@ -26,7 +26,7 @@ def find_divisors(num):
             divisors.append(str(i))
     return divisors
     
-with open(f"./all_matmul_sbatch.sh", "a") as fout:
+with open(f"./all_matmul_sbatch.sh", "w") as fout:
     fout.truncate()
 
 for item in sizesMatmul:
@@ -34,7 +34,7 @@ for item in sizesMatmul:
     import shutil
     import os
     src_folder = "./td_integration_mod"
-    dst_folder = f"./td_integration_matmul_M{N}_K{K}_N{M}"
+    dst_folder = f"./td_integration_matmul_M{M}_K{K}_N{N}"
 
     # delete the destination folder if it already exists
     if os.path.exists(dst_folder):
@@ -54,8 +54,8 @@ for item in sizesMatmul:
     shutil.copytree(src_folder, dst_folder)
 
     with open("./td_integration_mod/td_problem/input_config.json", "rt") as fin:
-        with open(f"./td_integration_matmul_M{N}_K{K}_N{M}/td_problem/input_config.json", "wt") as fout:
+        with open(f"./td_integration_matmul_M{M}_K{K}_N{N}/td_problem/input_config.json", "wt") as fout:
             for line in fin:
                 fout.write(line.replace('${N}', str(N)).replace("${K}", str(K)).replace("${M}", str(M)).replace("${M_DIVISORS}", ", ".join(find_divisors(M))).replace("${N_DIVISORS}", ", ".join(find_divisors(N))).replace("${K_DIVISORS}", ", ".join(find_divisors(K))))
     with open(f"./all_matmul_sbatch.sh", "a") as fout:
-        fout.write(f"cd ./td_integration_matmul_M{N}_K{K}_N{M}/td_problem && sbatch run.sh && cd ../..\n")
+        fout.write(f"cd ./td_integration_matmul_M{M}_K{K}_N{N}/td_problem && sbatch run.sh && cd ../..\n")
