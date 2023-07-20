@@ -1,0 +1,41 @@
+{
+   "bookkeeping": {
+       "autotuner_target_dir": "/scratch/general/vast/u1418973/experiment/ytopt/htd-codegen-matvec_M${M}_K${K}",
+       "autotuner_function_to_target" : "linalg_matvec",
+       "autotuner_payload_ir_file" : "test/matvec/input_mlir/matvec_M${M}_K${K}.mlir",
+       "autotuner_highlevel_td_spec_file" : "main.cpp",
+       "autotuner_lowlevel_td_spec_file" : "matvec_gpu_spec_tvm.mlir",
+       "autotuner_input" : [
+            {
+                "shape" : "${M}x${K}xf32=1",
+                "value" : "1"
+            },
+            {
+                "shape" : "${K}xf32=1",
+                "value" : "1"
+            },
+            {
+                "shape" : "${M}xf32=0",
+                "value" : "0"
+            }
+       ]
+   },
+   "configuration" : [
+       {
+        "type": "categorical",
+        "choices": [${M_DIVISORS}],
+        "name": "BX"
+       },
+       {
+        "name": "TX",
+        "type": "categorical",
+        "choices": [${M_DIVISORS}]
+       },
+       {
+        "type": "categorical",
+        "name": "TK",
+        "choices": [${K_DIVISORS}]
+       }
+
+   ]
+}
