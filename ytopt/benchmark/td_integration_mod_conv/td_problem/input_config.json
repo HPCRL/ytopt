@@ -1,8 +1,8 @@
 {
     "bookkeeping": {
-        "autotuner_target_dir": "/uufs/chpc.utah.edu/common/home/u1419116/projects/hlt/ytopt/htd-codegen_conv2d_nchw_N${N}_H${OLD_H}_W${OLD_W}_CO${CO}_CI${CI}_KH${KH}_KW${KW}_ST_${ST}_padding_${PAD}",
+        "autotuner_target_dir": "/scratch/general/vast/u1418973/experiment/ytopt/htd-codegen_conv2d_nchw_N${N}_H${OLD_H}_W${OLD_W}_CO${CO}_CI${CI}_KH${KH}_KW${KW}_ST_${ST}_padding_${PAD}",
         "autotuner_function_to_target" : "conv_2d_nchw_fchw",
-        "autotuner_payload_ir_file" : "test/conv2d_nchw/input_mlir/conv2d_nchw_N${N}_H${OLD_H}_W${OLD_W}_CO${CO}_CI${CI}_KH${KH}_KW${KW}_ST_${ST}_padding_${PAD}.mlir",
+        "autotuner_payload_ir_file" : "test/conv2d_nchw/input_mlir/conv2d_nchw_N${N}_H${OLD_H}_W${OLD_W}_CO${CO}_CI${CI}_KH${KH}_KW${KW}_ST_${ST}_padding_${PAD}_sm_80.mlir",
         "autotuner_highlevel_td_spec_file" : "main.cpp",
         "autotuner_lowlevel_td_spec_file" : "conv2d_gpu_spec_tvm.mlir",
         "autotuner_input" : [
@@ -75,12 +75,7 @@
          "name": "TKW",
          "type": "categorical",
          "choices": [${KW_DIVISORS}]
-         },
-         {
-        "name": "VECTORIZATION",
-        "type": "categorical",
-        "choices": [0, 1]
-        }
+	 }
     ]
  }
  

@@ -7,6 +7,7 @@
 #SBATCH --partition=soc-gpu-np  # partition, abbreviated by -p
 #SBATCH --gres=gpu:a100:1
 #SBATCH --mem=32000
+#SBATCH --exclude=notch369,notch370   # excluding nodes notch369 and notch370
 
 module load cuda python/3.10
 
