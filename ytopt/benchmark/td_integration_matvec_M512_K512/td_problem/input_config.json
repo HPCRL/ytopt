@@ -1,0 +1,41 @@
+{
+   "bookkeeping": {
+       "autotuner_target_dir": "/scratch/general/vast/u1418973/experiment/ytopt/htd-codegen-matvec_M512_K512",
+       "autotuner_function_to_target" : "linalg_matvec",
+       "autotuner_payload_ir_file" : "test/matvec/input_mlir/matvec_M512_K512.mlir",
+       "autotuner_highlevel_td_spec_file" : "main.cpp",
+       "autotuner_lowlevel_td_spec_file" : "matvec_gpu_spec_tvm.mlir",
+       "autotuner_input" : [
+            {
+                "shape" : "512x512xf32=1",
+                "value" : "1"
+            },
+            {
+                "shape" : "512xf32=1",
+                "value" : "1"
+            },
+            {
+                "shape" : "512xf32=0",
+                "value" : "0"
+            }
+       ]
+   },
+   "configuration" : [
+       {
+        "type": "categorical",
+        "choices": [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],
+        "name": "BX"
+       },
+       {
+        "name": "TX",
+        "type": "categorical",
+        "choices": [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+       },
+       {
+        "type": "categorical",
+        "name": "TK",
+        "choices": [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+       }
+
+   ]
+}
