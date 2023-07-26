@@ -44,7 +44,7 @@ for item in sizesMatvec:
     shutil.copytree(src_folder, dst_folder)
 
     src_folder = "/scratch/general/vast/u1418973/experiment/ytopt/new_codegen_matvec"
-    dst_folder = f"/scratch/general/vast/u1418973/experiment/ytopt/htd-codegen-matvec_M${M}_K${K}"
+    dst_folder = f"/scratch/general/vast/u1418973/austin-june20/ytopt/htd-codegen-matvec_M{M}_K{K}"
 
     # delete the destination folder if it already exists
     if os.path.exists(dst_folder):
