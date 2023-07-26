@@ -43,8 +43,8 @@ for item in sizesMatvec:
     # use shutil.copytree() to recursively copy the contents of the source folder to the destination folder
     shutil.copytree(src_folder, dst_folder)
 
-    src_folder = "/scratch/general/vast/u1418973/experiment/ytopt/new_codegen_matvec"
-    dst_folder = f"/scratch/general/vast/u1418973/austin-june20/ytopt/htd-codegen-matvec_M{M}_K{K}"
+    src_folder = "/scratch/general/vast/u1418973/porting-ytopt/ytopt/htd-codegen"
+    dst_folder = f"/scratch/general/vast/u1418973/porting-ytopt/ytopt/htd-codegen-matvec_M{M}_K{K}"
 
     # delete the destination folder if it already exists
     if os.path.exists(dst_folder):
@@ -57,5 +57,5 @@ for item in sizesMatvec:
         with open(f"./td_integration_matvec_M{M}_K{K}/td_problem/input_config.json", "wt") as fout:
             for line in fin:
                 fout.write(line.replace("${K}", str(K)).replace("${M}", str(M)).replace("${M_DIVISORS}", ", ".join(find_divisors(M))).replace("${K_DIVISORS}", ", ".join(find_divisors(K))))
-    with open(f"./all_matvec_sbatch.sh", "a") as fout:
+    with open(f"./run_all_matvec_on_chpc.sh", "a") as fout:
         fout.write(f"cd ./td_integration_matvec_M{M}_K{K}/td_problem && sbatch run.sh && cd ../..\n")
