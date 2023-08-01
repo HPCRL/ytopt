@@ -30,7 +30,7 @@ obj = Plopper(
 ##############################Configuration#####################################
 
 # Create a ConfigurationSpace object
-cs = CS.ConfigurationSpace(seed=1234)
+cs = CS.ConfigurationSpace()
 
 # Add hyperparameters to the ConfigurationSpace object
 for param in input_data["configuration"]:
@@ -84,14 +84,14 @@ def myobj(point: dict):
         x = np.asarray_chkfinite(x)  # ValueError if any NaN or Inf
         value = list(point.values())
         print("CONFIG:", point)
-        txvalue = point["TX"]
-        tyvalue = point["TY"]
-        bxvalue = point["BX"]
-        byvalue = point["BY"]
+        txvalue = point.get("TX", 1)
+        tyvalue = point.get("TY", 1)
+        bxvalue = point.get("BX", 1)
+        byvalue = point.get("BY", 1)
 
         totalthreads = txvalue * tyvalue
         params = {k.upper(): v for k, v in point.items()}
-        if bxvalue * byvalue >= 8 and txvalue * tyvalue >=16 and totalthreads <= 1024 and totalthreads > 0:
+        if bxvalue * byvalue >= 4 and txvalue * tyvalue >= 8 and totalthreads <= 1024 and totalthreads > 0:
             result = obj.findRuntime(value, params)
         else:
             result = float('+inf')

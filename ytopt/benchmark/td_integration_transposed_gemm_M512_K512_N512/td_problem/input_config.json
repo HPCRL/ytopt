@@ -1,0 +1,51 @@
+{
+   "bookkeeping": {
+       "autotuner_target_dir": "/scratch/general/vast/u1418973/porting-ytopt/ytopt/htd-codegen-transposed-gemm_M512_K512_N512",
+       "autotuner_function_to_target" : "linalg_transposed_gemm",
+       "autotuner_payload_ir_file" : "test/transpose_mm/input_mlir/transposed_gemm_M512_K512_N512.mlir",
+       "autotuner_highlevel_td_spec_file" : "main.cpp",
+       "autotuner_lowlevel_td_spec_file" : "transposed_gemm_gpu_spec_tvm.mlir",
+       "autotuner_input" : [
+            {
+                "shape" : "512x512xf32=1",
+                "value" : "1"
+            },
+            {
+                "shape" : "512x512xf32=1",
+                "value" : "1"
+            },
+            {
+                "shape" : "512x512xf32=0",
+                "value" : "0"
+            }
+       ]
+   },
+   "configuration" : [
+       {
+        "type": "categorical",
+        "choices": [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],
+        "name": "BX"
+       },
+       {
+        "name": "BY",
+        "type": "categorical",
+        "choices": [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+       },
+       {
+        "name": "TX",
+        "type": "categorical",
+        "choices": [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+       },
+       {
+	    "type": "categorical",
+        "choices": [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],
+	    "name": "TY"
+       },
+       {
+        "type": "categorical",
+        "name": "TK",
+        "choices": [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+       }
+
+   ]
+}

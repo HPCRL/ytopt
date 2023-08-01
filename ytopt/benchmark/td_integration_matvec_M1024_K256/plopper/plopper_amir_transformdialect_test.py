@@ -56,7 +56,7 @@ class Plopper:
         )
         #print(build_cmd)
         #################COMPILE
-        compile_cmd = "iree-compile {0} --iree-hal-target-backends=cuda --iree-hal-cuda-llvm-target-arch=sm_80 --iree-opt-const-expr-hoisting=false --iree-opt-const-eval=false --iree-codegen-llvmgpu-enable-transform-dialect-jit=false --iree-codegen-llvmgpu-use-transform-dialect={1} &> {2}".format(
+        compile_cmd = "iree-compile {0} --iree-hal-target-backends=cuda --iree-hal-cuda-llvm-target-arch=sm_80 --iree-codegen-llvmgpu-enable-transform-dialect-jit=false --iree-codegen-llvmgpu-use-transform-dialect={1} &> {2}".format(
             payload_ir_file, lowlevel_transform_ir_file, tmpvmfb
         )
         #########RUN Command ###############
