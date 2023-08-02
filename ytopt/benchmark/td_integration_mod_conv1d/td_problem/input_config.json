@@ -1,8 +1,8 @@
 {
     "bookkeeping": {
-        "autotuner_target_dir": "/scratch/general/vast/u1418973/experiment/ytopt/htd-codegen_conv1d_nchw_N${N}_H${OLD_H}_W${OLD_W}_CO${CO}_CI${CI}_KH${KH}_KW${KW}_ST_${ST}_padding_${PAD}",
-        "autotuner_function_to_target" : "conv_21d_nchw_fchw",
-        "autotuner_payload_ir_file" : "test/conv1d_nchw/input_mlir/conv1d_nchw_N${N}_H${OLD_H}_W${OLD_W}_CO${CO}_CI${CI}_KH${KH}_KW${KW}_ST_${ST}_padding_${PAD}_sm_80.mlir",
+        "autotuner_target_dir": "/scratch/general/vast/u1418973/porting-ytopt/ytopt/htd-codegen_conv1d_ncw_N${N}_W${OLD_W}_CO${CO}_CI${CI}_KW${KW}_ST_${ST}_padding_${PAD}",
+        "autotuner_function_to_target" : "conv_1d_ncw_fcw",
+        "autotuner_payload_ir_file" : "test/conv1d_ncw/input_mlir/conv1d_ncw_N${N}_W${OLD_W}_CO${CO}_CI${CI}_KW${KW}_ST_${ST}_padding_${PAD}_sm_80.mlir",
         "autotuner_highlevel_td_spec_file" : "main.cpp",
         "autotuner_lowlevel_td_spec_file" : "conv1d_gpu_spec_tvm.mlir",
         "autotuner_input" : [

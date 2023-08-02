@@ -84,14 +84,14 @@ def myobj(point: dict):
         x = np.asarray_chkfinite(x)  # ValueError if any NaN or Inf
         value = list(point.values())
         print("CONFIG:", point)
-        txvalue = point["TOH"] * point["TOW"]
+        txvalue = 1 * point["TOW"]
         tyvalue = point["TN"] * point["TF"]
-        bxvalue = point["BOH"] * point["BOW"]
+        bxvalue = 1 * point["BOW"]
         byvalue = point["BN"] * point["BF"]
 
         totalthreads = txvalue * tyvalue
         params = {k.upper(): v for k, v in point.items()}
-        if bxvalue * byvalue >= 4 and txvalue * tyvalue >=16 and totalthreads <= 1024 and totalthreads > 0:
+        if bxvalue * byvalue >= 4 and txvalue * tyvalue >=8 and totalthreads <= 1024 and totalthreads > 0:
             result = obj.findRuntime(value, params)
         else:
             result = float('+inf')
