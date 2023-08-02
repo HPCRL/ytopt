@@ -1,0 +1,888 @@
+td_integration_conv2d_nchw_N1_H112_W112_CO128_CI128_KH3_KW3_ST_1_padding_1
+Performance (accuracy) summary based on 888 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.0012232415902140672
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 888 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.0012232415902140672
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+32.0		1.0		16.0		1.0		4.0		2.0		3.0		3.0		1.0		4.0		14.0		817.5		8527.507261037827
+
+
+#define BN 1
+#define BF 32
+#define BOH 16
+#define BOW 1
+#define TN 1
+#define TF 2
+#define TOH 4
+#define TOW 14
+#define TC 4
+#define TKH 3
+#define TKW 3
+td_integration_conv2d_nchw_N1_H28_W28_CO512_CI512_KH3_KW3_ST_1_padding_1
+Performance (accuracy) summary based on 847 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.0009900990099009901
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 847 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.0009900990099009901
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+128.0		1.0		4.0		1.0		8.0		4.0		3.0		3.0		1.0		7.0		7.0		1010.0		9229.141996860504
+
+
+#define BN 1
+#define BF 128
+#define BOH 4
+#define BOW 1
+#define TN 1
+#define TF 4
+#define TOH 7
+#define TOW 7
+#define TC 8
+#define TKH 3
+#define TKW 3
+#define VECTORIZATION 1010
+td_integration_conv2d_nchw_N1_H136_W136_CO128_CI64_KH3_KW3_ST_1_padding_1
+Performance (accuracy) summary based on 797 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.0025527135344871597
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 797 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.0025527135344871597
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+16.0		1.0		136.0		2.0		8.0		8.0		3.0		3.0		1.0		1.0		4.0		391.74		1287.8107163906095
+
+
+#define BN 1
+#define BF 16
+#define BOH 136
+#define BOW 2
+#define TN 1
+#define TF 8
+#define TOH 1
+#define TOW 4
+#define TC 8
+#define TKH 3
+#define TKW 3
+td_integration_conv2d_nchw_N1_H34_W34_CO256_CI512_KH1_KW1_ST_1_padding_0
+Performance (accuracy) summary based on 841 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.004163370664890295
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 841 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.004163370664890295
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+64.0		1.0		17.0		1.0		32.0		4.0		1.0		1.0		1.0		1.0		34.0		240.19		7442.294285297394
+
+
+#define BN 1
+#define BF 64
+#define BOH 17
+#define BOW 1
+#define TN 1
+#define TF 4
+#define TOH 1
+#define TOW 34
+#define TC 32
+#define TKH 1
+#define TKW 1
+#define VECTORIZATION 240
+td_integration_conv2d_nchw_N1_H136_W136_CO64_CI128_KH1_KW1_ST_1_padding_0
+Performance (accuracy) summary based on 786 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.00829324929507381
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 786 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.00829324929507381
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+16.0		1.0		68.0		1.0		32.0		4.0		1.0		1.0		1.0		1.0		34.0		120.58		1825.5632095336916
+
+
+#define BN 1
+#define BF 16
+#define BOH 68
+#define BOW 1
+#define TN 1
+#define TF 4
+#define TOH 1
+#define TOW 34
+#define TC 32
+#define TKH 1
+#define TKW 1
+#define VECTORIZATION 120
+td_integration_conv2d_nchw_N1_H34_W34_CO512_CI256_KH3_KW3_ST_1_padding_1
+Performance (accuracy) summary based on 849 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.0012127386063207936
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 849 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.0012127386063207936
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+64.0		1.0		2.0		1.0		16.0		4.0		1.0		3.0		1.0		2.0		17.0		824.58		12213.435029506683
+
+
+#define BN 1
+#define BF 64
+#define BOH 2
+#define BOW 1
+#define TN 1
+#define TF 4
+#define TOH 2
+#define TOW 17
+#define TC 16
+#define TKH 1
+#define TKW 3
+#define VECTORIZATION 824
+td_integration_conv2d_nchw_N1_H14_W14_CO1024_CI256_KH1_KW1_ST_1_padding_0
+Performance (accuracy) summary based on 838 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.017979144192736426
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 838 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.017979144192736426
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+128.0		1.0		7.0		1.0		8.0		8.0		1.0		1.0		1.0		2.0		1.0		55.62		2517.330536842346
+
+
+#define BN 1
+#define BF 128
+#define BOH 7
+#define BOW 1
+#define TN 1
+#define TF 8
+#define TOH 2
+#define TOW 1
+#define TC 8
+#define TKH 1
+#define TKW 1
+#define VECTORIZATION 55
+td_integration_conv2d_nchw_N1_H544_W544_CO32_CI3_KH3_KW3_ST_1_padding_1
+Performance (accuracy) summary based on 857 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.00865650969529086
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 857 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.00865650969529086
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+4.0		1.0		4.0		34.0		3.0		2.0		3.0		3.0		1.0		34.0		8.0		115.52		9838.424345254898
+
+
+#define BN 1
+#define BF 4
+#define BOH 4
+#define BOW 34
+#define TN 1
+#define TF 2
+#define TOH 34
+#define TOW 8
+#define TC 3
+#define TKH 3
+#define TKW 3
+#define VECTORIZATION 115
+td_integration_conv2d_nchw_N1_H14_W14_CO256_CI256_KH3_KW3_ST_1_padding_1
+Performance (accuracy) summary based on 3404 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.007973845785822503
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 3404 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.007973845785822503
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+32.0		1.0		2.0		1.0		8.0		8.0		3.0		3.0		1.0		7.0		2.0		125.41		14609.396564483644
+
+
+#define BN 1
+#define BF 32
+#define BOH 2
+#define BOW 1
+#define TN 1
+#define TF 8
+#define TOH 7
+#define TOW 2
+#define TC 8
+#define TKH 3
+#define TKW 3
+#define VECTORIZATION 125
+td_integration_conv2d_nchw_N1_H56_W56_CO128_CI256_KH1_KW1_ST_2_padding_0
+Performance (accuracy) summary based on 827 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.013815971262779773
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 827 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.013815971262779773
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+16.0		1.0		7.0		7.0		32.0		8.0		1.0		1.0		1.0		4.0		1.0		72.38		1613.8662173748016
+
+
+#define BN 1
+#define BF 16
+#define BOH 7
+#define BOW 7
+#define TN 1
+#define TF 8
+#define TOH 4
+#define TOW 1
+#define TC 32
+#define TKH 1
+#define TKW 1
+#define VECTORIZATION 72
+td_integration_conv2d_nchw_N1_H14_W14_CO512_CI1024_KH1_KW1_ST_2_padding_0
+Performance (accuracy) summary based on 881 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.009150805270863836
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 881 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.009150805270863836
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+128.0		1.0		7.0		1.0		32.0		32.0		1.0		1.0		1.0		1.0		7.0		109.28		6639.118060827255
+
+
+#define BN 1
+#define BF 128
+#define BOH 7
+#define BOW 1
+#define TN 1
+#define TF 32
+#define TOH 1
+#define TOW 7
+#define TC 32
+#define TKH 1
+#define TKW 1
+#define VECTORIZATION 109
+td_integration_conv2d_nchw_N1_H56_W56_CO256_CI256_KH3_KW3_ST_1_padding_1
+Performance (accuracy) summary based on 826 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.0013110455588331695
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 826 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.0013110455588331695
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+64.0		1.0		14.0		2.0		16.0		4.0		1.0		3.0		1.0		4.0		4.0		762.75		10420.771340608597
+
+
+#define BN 1
+#define BF 64
+#define BOH 14
+#define BOW 2
+#define TN 1
+#define TF 4
+#define TOH 4
+#define TOW 4
+#define TC 16
+#define TKH 1
+#define TKW 3
+#define VECTORIZATION 762
+td_integration_conv2d_nchw_N1_H14_W14_CO512_CI512_KH3_KW3_ST_1_padding_1
+Performance (accuracy) summary based on 858 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.0029784952641925297
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 858 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.0029784952641925297
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+64.0		1.0		7.0		1.0		16.0		8.0		1.0		3.0		1.0		1.0		7.0		335.74		4291.824076652527
+
+
+#define BN 1
+#define BF 64
+#define BOH 7
+#define BOW 1
+#define TN 1
+#define TF 8
+#define TOH 1
+#define TOW 7
+#define TC 16
+#define TKH 1
+#define TKW 3
+#define VECTORIZATION 335
+td_integration_conv2d_nchw_N1_H56_W56_CO256_CI64_KH1_KW1_ST_1_padding_0
+Performance (accuracy) summary based on 776 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.02248201438848921
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 776 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.02248201438848921
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+32.0		1.0		14.0		2.0		16.0		4.0		1.0		1.0		1.0		1.0		7.0		44.48		2931.40186214447
+
+
+#define BN 1
+#define BF 32
+#define BOH 14
+#define BOW 2
+#define TN 1
+#define TF 4
+#define TOH 1
+#define TOW 7
+#define TC 16
+#define TKH 1
+#define TKW 1
+#define VECTORIZATION 44
+td_integration_conv2d_nchw_N1_H17_W17_CO1024_CI512_KH3_KW3_ST_1_padding_1
+Performance (accuracy) summary based on 883 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.0006993006993006993
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 883 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.0006993006993006993
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+128.0		1.0		17.0		1.0		8.0		8.0		1.0		3.0		1.0		1.0		17.0		1430.0		9339.970967292786
+
+
+#define BN 1
+#define BF 128
+#define BOH 17
+#define BOW 1
+#define TN 1
+#define TF 8
+#define TOH 1
+#define TOW 17
+#define TC 8
+#define TKH 1
+#define TKW 3
+#define VECTORIZATION 1430
+td_integration_conv2d_nchw_N1_H56_W56_CO64_CI64_KH1_KW1_ST_1_padding_0
+Performance (accuracy) summary based on 841 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.04830917874396135
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 841 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.04830917874396135
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+16.0		1.0		28.0		1.0		32.0		4.0		1.0		1.0		1.0		1.0		14.0		20.7		1545.4962759017944
+
+
+#define BN 1
+#define BF 16
+#define BOH 28
+#define BOW 1
+#define TN 1
+#define TF 4
+#define TOH 1
+#define TOW 14
+#define TC 32
+#define TKH 1
+#define TKW 1
+#define VECTORIZATION 20
+td_integration_conv2d_nchw_N1_H17_W17_CO512_CI1024_KH1_KW1_ST_1_padding_0
+Performance (accuracy) summary based on 850 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.0031952965235173825
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 850 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.0031952965235173825
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+64.0		1.0		1.0		17.0		8.0		8.0		1.0		1.0		1.0		17.0		1.0		312.96		338.5548796653748
+
+
+#define BN 1
+#define BF 64
+#define BOH 1
+#define BOW 17
+#define TN 1
+#define TF 8
+#define TOH 17
+#define TOW 1
+#define TC 8
+#define TKH 1
+#define TKW 1
+#define VECTORIZATION 312
+td_integration_conv2d_nchw_N1_H56_W56_CO64_CI64_KH3_KW3_ST_1_padding_1
+Performance (accuracy) summary based on 841 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.016702856188408218
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 841 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.016702856188408218
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+8.0		1.0		14.0		8.0		8.0		8.0		3.0		3.0		1.0		4.0		1.0		59.87		6946.002602815628
+
+
+#define BN 1
+#define BF 8
+#define BOH 14
+#define BOW 8
+#define TN 1
+#define TF 8
+#define TOH 4
+#define TOW 1
+#define TC 8
+#define TKH 3
+#define TKW 3
+#define VECTORIZATION 59
+td_integration_conv2d_nchw_N1_H224_W224_CO64_CI3_KH3_KW3_ST_1_padding_1
+Performance (accuracy) summary based on 835 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.03188775510204082
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 835 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.03188775510204082
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+8.0		1.0		16.0		8.0		3.0		1.0		3.0		3.0		1.0		16.0		7.0		31.36		9398.07232785225
+
+
+#define BN 1
+#define BF 8
+#define BOH 16
+#define BOW 8
+#define TN 1
+#define TF 1
+#define TOH 16
+#define TOW 7
+#define TC 3
+#define TKH 3
+#define TKW 3
+8.0		1.0		16.0		8.0		3.0		2.0		3.0		3.0		1.0		16.0		7.0		31.36		9446.623245716097
+
+
+#define BN 1
+#define BF 8
+#define BOH 16
+#define BOW 8
+#define TN 1
+#define TF 2
+#define TOH 16
+#define TOW 7
+#define TC 3
+#define TKH 3
+#define TKW 3
+td_integration_conv2d_nchw_N1_H68_W68_CO128_CI256_KH1_KW1_ST_1_padding_0
+Performance (accuracy) summary based on 807 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.006273919317397579
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 807 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.006273919317397579
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+16.0		1.0		17.0		4.0		16.0		8.0		1.0		1.0		1.0		1.0		17.0		159.39		5483.38601064682
+
+
+#define BN 1
+#define BF 16
+#define BOH 17
+#define BOW 4
+#define TN 1
+#define TF 8
+#define TOH 1
+#define TOW 17
+#define TC 16
+#define TKH 1
+#define TKW 1
+#define VECTORIZATION 159
+td_integration_conv2d_nchw_N1_H224_W224_CO64_CI3_KH7_KW7_ST_2_padding_3
+Performance (accuracy) summary based on 838 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.02701242571582928
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 838 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.02701242571582928
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+8.0		1.0		7.0		14.0		3.0		4.0		7.0		7.0		1.0		16.0		1.0		37.02		2752.21728515625
+
+
+#define BN 1
+#define BF 8
+#define BOH 7
+#define BOW 14
+#define TN 1
+#define TF 4
+#define TOH 16
+#define TOW 1
+#define TC 3
+#define TKH 7
+#define TKW 7
+8.0		1.0		14.0		14.0		3.0		4.0		7.0		7.0		1.0		8.0		1.0		37.02		5069.534326076508
+
+
+#define BN 1
+#define BF 8
+#define BOH 14
+#define BOW 14
+#define TN 1
+#define TF 4
+#define TOH 8
+#define TOW 1
+#define TC 3
+#define TKH 7
+#define TKW 7
+td_integration_conv2d_nchw_N1_H272_W272_CO64_CI32_KH3_KW3_ST_1_padding_1
+Performance (accuracy) summary based on 860 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.002243359655419957
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 860 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.002243359655419957
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+8.0		1.0		17.0		17.0		8.0		2.0		3.0		3.0		1.0		4.0		4.0		445.76		6976.60760140419
+
+
+#define BN 1
+#define BF 8
+#define BOH 17
+#define BOW 17
+#define TN 1
+#define TF 2
+#define TOH 4
+#define TOW 4
+#define TC 8
+#define TKH 3
+#define TKW 3
+#define VECTORIZATION 445
+td_integration_conv2d_nchw_N1_H68_W68_CO512_CI256_KH3_KW3_ST_1_padding_1
+Performance (accuracy) summary based on 882 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.0002770083102493075
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 882 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.0002770083102493075
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+32.0		1.0		2.0		4.0		8.0		16.0		3.0		3.0		1.0		2.0		1.0		3610.0		15366.56937289238
+
+
+#define BN 1
+#define BF 32
+#define BOH 2
+#define BOW 4
+#define TN 1
+#define TF 16
+#define TOH 2
+#define TOW 1
+#define TC 8
+#define TKH 3
+#define TKW 3
+#define VECTORIZATION 3610
+td_integration_conv2d_nchw_N1_H28_W28_CO128_CI128_KH3_KW3_ST_1_padding_1
+Performance (accuracy) summary based on 839 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.013349352556401016
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 839 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.013349352556401016
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+64.0		1.0		7.0		2.0		32.0		1.0		3.0		3.0		1.0		7.0		7.0		74.91		2303.4895446300507
+
+
+#define BN 1
+#define BF 64
+#define BOH 7
+#define BOW 2
+#define TN 1
+#define TF 1
+#define TOH 7
+#define TOW 7
+#define TC 32
+#define TKH 3
+#define TKW 3
+#define VECTORIZATION 74
+td_integration_conv2d_nchw_N1_H7_W7_CO2048_CI512_KH1_KW1_ST_1_padding_0
+Performance (accuracy) summary based on 748 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.010881392818280738
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 748 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.010881392818280738
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+512.0		1.0		1.0		1.0		4.0		4.0		1.0		1.0		1.0		7.0		1.0		91.9		5843.704575777054
+
+
+#define BN 1
+#define BF 512
+#define BOH 1
+#define BOW 1
+#define TN 1
+#define TF 4
+#define TOH 7
+#define TOW 1
+#define TC 4
+#define TKH 1
+#define TKW 1
+#define VECTORIZATION 91
+td_integration_conv2d_nchw_N1_H28_W28_CO256_CI512_KH1_KW1_ST_2_padding_0
+Performance (accuracy) summary based on 854 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.009129085265656381
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 854 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.009129085265656381
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+32.0		1.0		7.0		2.0		8.0		8.0		1.0		1.0		1.0		1.0		14.0		109.54		3235.7525577545166
+
+
+#define BN 1
+#define BF 32
+#define BOH 7
+#define BOW 2
+#define TN 1
+#define TF 8
+#define TOH 1
+#define TOW 14
+#define TC 8
+#define TKH 1
+#define TKW 1
+#define VECTORIZATION 109
+td_integration_conv2d_nchw_N1_H28_W28_CO512_CI128_KH1_KW1_ST_1_padding_0
+Performance (accuracy) summary based on 834 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.017361111111111112
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+P1		P2 	   P3 	     P4		1/accuracy	     elapsed time
+
+Performance (accuracy) summary based on 834 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.017361111111111112
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BF		BN		BOH		BOW		TC		TF		TKH		TKW		TN		TOH		TOW		VECTORIZATION		execution time		score
+
+128.0		1.0		7.0		1.0		16.0		4.0		1.0		1.0		1.0		1.0		14.0		57.6		4287.963201284409
+
+
+#define BN 1
+#define BF 128
+#define BOH 7
+#define BOW 1
+#define TN 1
+#define TF 4
+#define TOH 1
+#define TOW 14
+#define TC 16
+#define TKH 1
+#define TKW 1
+#define VECTORIZATION 57

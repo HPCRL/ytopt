@@ -6,10 +6,10 @@ from sklearn.linear_model import LogisticRegression
 dataframe = pandas.read_csv("results.csv")
 array = dataframe.values
 # Create a boolean mask of rows where column 4 is not -1
-mask = array[:, 12] != float("inf")
+mask = array[:, 11] != float("inf")
 # Create a new array that only contains the rows that meet the condition
 new_array = array[mask, :]
-x = new_array[:,12]
+x = new_array[:,11]
 
 print("Performance (accuracy) summary based on", len(new_array), "evaluations:")
 print("Min: ", 1/x.max())

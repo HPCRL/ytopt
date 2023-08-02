@@ -91,7 +91,7 @@ def myobj(point: dict):
 
         totalthreads = txvalue * tyvalue
         params = {k.upper(): v for k, v in point.items()}
-        if bxvalue * byvalue >= 16 and txvalue * tyvalue >=16 and totalthreads <= 1024 and totalthreads > 0:
+        if bxvalue * byvalue >= 8 and txvalue * tyvalue >=16 and totalthreads <= 1024 and totalthreads > 0:
             result = obj.findRuntime(value, params)
         else:
             result = float('+inf')

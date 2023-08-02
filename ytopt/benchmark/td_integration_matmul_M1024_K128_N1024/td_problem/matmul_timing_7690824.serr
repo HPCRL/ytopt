@@ -1,7 +1,0 @@
-2023-04-29 11:22:19,825	INFO worker.py:1625 -- Started a local Ray instance.
-[2m[36m(compute_objective pid=2562382)[0m iree-auto-tuner/runtime/src/iree/hal/drivers/cuda/native_executable.c:136: INTERNAL; CUDA driver error: Requested shared memory size of 267520 larger than allowed size of 166912; while invoking native function hal.executable.create; while calling import; 
-[2m[36m(compute_objective pid=2562382)[0m [ 1]   native hal.executable.create:0 -
-[2m[36m(compute_objective pid=2562382)[0m [ 0] bytecode module.__init:250 /uufs/chpc.utah.edu/common/home/u1419116/projects/hlt/ytopt/htd-codegen_M1024_K128_N1024/test/mm/input_mlir/matmul_M1024_K128_N1024.mlir:9:8
-[2m[36m(compute_objective pid=2562382)[0m       at /uufs/chpc.utah.edu/common/home/u1419116/projects/hlt/ytopt/htd-codegen_M1024_K128_N1024/test/mm/input_mlir/matmul_M1024_K128_N1024.mlir:7:1
-/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/site-packages/numpy-1.22.3-py3.10-linux-x86_64.egg/numpy/core/_methods.py:179: RuntimeWarning: overflow encountered in reduce
-  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)

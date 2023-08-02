@@ -1,6 +1,6 @@
 {
    "bookkeeping": {
-       "autotuner_target_dir": "/uufs/chpc.utah.edu/common/home/u1419116/projects/hlt/ytopt/htd-codegen_M1024_K128_N1024",
+       "autotuner_target_dir": "/scratch/general/vast/u1418973/experiment/ytopt/htd-codegen_M1024_K128_N1024",
        "autotuner_function_to_target" : "linalg_matmul",
        "autotuner_payload_ir_file" : "test/mm/input_mlir/matmul_M1024_K128_N1024.mlir",
        "autotuner_highlevel_td_spec_file" : "main.cpp",

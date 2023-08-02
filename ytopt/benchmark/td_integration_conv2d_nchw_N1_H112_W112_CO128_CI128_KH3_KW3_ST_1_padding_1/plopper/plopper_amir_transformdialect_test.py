@@ -61,7 +61,7 @@ class Plopper:
             payload_ir_file, lowlevel_transform_ir_file, tmpvmfb
         )
         #########RUN Command ###############
-        run_cmd = 'ncu -f --set full iree-run-module --function={} --device=cuda '.format(
+        run_cmd = 'timeout 2m ncu -f iree-run-module --function={} --device=cuda '.format(
                 self.autotuner_function_to_target)
         # Loop through the input values in autotuner_input and add them to the run_cmd string
         for input_value in self.autotuner_input:
@@ -71,14 +71,15 @@ class Plopper:
             run_cmd += ' --input="{}"'.format(input_str)
 
         run_cmd += ' --module="{0}" '.format(tmpvmfb)
-        run_cmd +=  ''' --output= | grep 'Duration' | awk '{print $3 " " $2}' | awk '{max = (max < $1) ? $1 : max} END {if ($2 == "msecond") {max *= 1000}; print max}' '''
+        run_cmd +=  ''' --output= | grep 'Duration' | awk '{print $3 " " $2}' | awk '{v=$1;u=$2;if(u=="msecond")v*=1000;if(u=="second")v*=1000000;if(u=="minute")v*=60000000;if(u=="hour")v*=3600000000;m=(v>m)?v:m}END{print m}' '''
+
 
         # old_run_cmd = self.outputdir + '/../exe.pl' + ' \"iree-run-module --function=linalg_matmul --device=cuda --input=\"1024x128xf32=1\" --input=\"128x2048xf32=1\" --input=\"1024x2048xf32=0\" --module=\"{0}\" --output= \"'.format(tmpvmfb)
 
         #######################################################################
         # Logger
         # print(compile_cmd)
-        # print(run_cmd)
+       # print(run_cmd)
         # Execute the command in a subshell using os.system
         return_value = os.system(build_cmd)
         if return_value == 0:

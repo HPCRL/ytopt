@@ -7,8 +7,9 @@
 #SBATCH --partition=soc-gpu-np  # partition, abbreviated by -p
 #SBATCH --gres=gpu:a100:1
 #SBATCH --mem=32000
+#SBATCH --exclude=notch369,notch370   # excluding nodes notch369 and notch370
 
 module load cuda python/3.10
 
-python3 -W ignore -m ytopt.search.ambs --evaluator ray --problem problem_amir_test_wrapper.py --max-evals=1000 --learner GBRT
+python3 -W ignore -m ytopt.search.ambs --evaluator ray --problem problem_amir_test_wrapper.py --max-evals=3000 --learner GBRT
 python3 findMin.py

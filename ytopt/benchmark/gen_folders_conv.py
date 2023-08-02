@@ -1,6 +1,6 @@
 sizesVGG = [
     [1, 224, 224, 64, 3, 3, 3, 1, 1],   # VGG1
-    [1, 112, 112, 128, 128, 3, 3, 1, 1], # VGG3
+    #[1, 112, 112, 128, 128, 3, 3, 1, 1], # VGG3
     [1, 56, 56, 256, 256, 3, 3, 1, 1],   # VGG5
     [1, 28, 28, 512, 512, 3, 3, 1, 1],   # VGG7
     [1, 14, 14, 512, 512, 3, 3, 1, 1],   # VGG9
@@ -62,8 +62,8 @@ for item in sizesResnet + sizesVGG + sizesYolo:
     # use shutil.copytree() to recursively copy the contents of the source folder to the destination folder
     shutil.copytree(src_folder, dst_folder)
 
-    src_folder = "/uufs/chpc.utah.edu/common/home/u1419116/projects/hlt/ytopt/new_codegen_conv"
-    dst_folder = f"/uufs/chpc.utah.edu/common/home/u1419116/projects/hlt/ytopt/htd-codegen_conv2d_nchw_N{N}_H{H}_W{W}_CO{CO}_CI{CI}_KH{KH}_KW{KW}_ST_{stride}_padding_{pad}"
+    src_folder = "/scratch/general/vast/u1418973/experiment/htd-codegen"
+    dst_folder = f"/scratch/general/vast/u1418973/experiment/ytopt/htd-codegen_conv2d_nchw_N{N}_H{H}_W{W}_CO{CO}_CI{CI}_KH{KH}_KW{KW}_ST_{stride}_padding_{pad}"
 
     # delete the destination folder if it already exists
     if os.path.exists(dst_folder):

@@ -1,12 +1,7 @@
 {
-    "{\"BLOCK_SIZE\": 10}": 0.032,
-    "{\"BLOCK_SIZE\": 1}": 0.485,
-    "{\"BLOCK_SIZE\": 2}": 0.193,
-    "{\"BLOCK_SIZE\": 3}": 0.112,
-    "{\"BLOCK_SIZE\": 4}": 0.084,
-    "{\"BLOCK_SIZE\": 5}": 0.067,
-    "{\"BLOCK_SIZE\": 6}": 0.049,
-    "{\"BLOCK_SIZE\": 7}": 0.045,
-    "{\"BLOCK_SIZE\": 8}": 0.037,
-    "{\"BLOCK_SIZE\": 9}": 0.035
+    "{\"BLOCK_SIZE\": 2}": 0.299,
+    "{\"BLOCK_SIZE\": 5}": 0.094,
+    "{\"BLOCK_SIZE\": 6}": 0.069,
+    "{\"BLOCK_SIZE\": 7}": 0.062,
+    "{\"BLOCK_SIZE\": 8}": 0.052
 }

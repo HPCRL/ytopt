@@ -43,8 +43,8 @@ for item in sizesMatmul:
     # use shutil.copytree() to recursively copy the contents of the source folder to the destination folder
     shutil.copytree(src_folder, dst_folder)
 
-    src_folder = "/uufs/chpc.utah.edu/common/home/u1419116/projects/hlt/ytopt/new_codegen"
-    dst_folder = f"/uufs/chpc.utah.edu/common/home/u1419116/projects/hlt/ytopt/htd-codegen_M{M}_K{K}_N{N}"
+    src_folder = "/scratch/general/vast/u1418973/experiment/htd-codegen"
+    dst_folder = f"/scratch/general/vast/u1418973/experiment/ytopt/htd-codegen_M{M}_K{K}_N{N}"
 
     # delete the destination folder if it already exists
     if os.path.exists(dst_folder):

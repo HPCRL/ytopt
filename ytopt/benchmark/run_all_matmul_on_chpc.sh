@@ -1,4 +1,4 @@
-# cd ./td_integration_matmul_M1024_K1024_N1024/td_problem && sbatch run.sh && cd ../..
+cd ./td_integration_matmul_M1024_K1024_N1024/td_problem && sbatch run.sh && cd ../..
 cd ./td_integration_matmul_M1024_K512_N1024/td_problem && sbatch run.sh && cd ../..
 cd ./td_integration_matmul_M1024_K256_N1024/td_problem && sbatch run.sh && cd ../..
 cd ./td_integration_matmul_M1024_K128_N1024/td_problem && sbatch run.sh && cd ../..
