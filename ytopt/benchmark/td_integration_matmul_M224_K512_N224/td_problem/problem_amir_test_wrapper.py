@@ -30,7 +30,7 @@ obj = Plopper(
 ##############################Configuration#####################################
 
 # Create a ConfigurationSpace object
-cs = CS.ConfigurationSpace(seed=1234)
+cs = CS.ConfigurationSpace()
 
 # Add hyperparameters to the ConfigurationSpace object
 for param in input_data["configuration"]:
