@@ -1,6 +1,6 @@
 {
     "bookkeeping": {
-        "autotuner_target_dir": "/scratch/general/vast/u1418973/experiment/ytopt/htd-codegen_conv2d_nchw_N1_H28_W28_CO256_CI512_KH1_KW1_ST_2_padding_0",
+        "autotuner_target_dir": "../../../../../htd-codegen_conv2d_nchw_N1_H28_W28_CO256_CI512_KH1_KW1_ST_2_padding_0",
         "autotuner_function_to_target" : "conv_2d_nchw_fchw",
         "autotuner_payload_ir_file" : "test/conv2d_nchw/input_mlir/conv2d_nchw_N1_H28_W28_CO256_CI512_KH1_KW1_ST_2_padding_0_sm_80.mlir",
         "autotuner_highlevel_td_spec_file" : "main.cpp",

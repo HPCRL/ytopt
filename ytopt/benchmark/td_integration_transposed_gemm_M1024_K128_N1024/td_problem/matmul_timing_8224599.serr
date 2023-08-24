@@ -1,4 +1,0 @@
-2023-07-29 23:48:05,317	INFO worker.py:1553 -- Started a local Ray instance.
-/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/site-packages/numpy-1.22.3-py3.10-linux-x86_64.egg/numpy/core/_methods.py:179: RuntimeWarning: overflow encountered in reduce
-  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
-slurmstepd: error: Detected 1 oom-kill event(s) in StepId=8224599.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.

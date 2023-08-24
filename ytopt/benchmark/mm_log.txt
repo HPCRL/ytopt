@@ -1,0 +1,355 @@
+td_integration_matmul_M512_K512_N512
+/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/site-packages/numpy-1.22.3-py3.10-linux-x86_64.egg/numpy/core/_methods.py:179: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Performance (accuracy) summary based on 963 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.022271714922048998
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BX		BY		TK		TX		TY		execution time		score
+
+64.0		4.0		64.0		4.0		32.0		44.9		6598.113691329956
+
+
+#define BX 64
+#define BY 4
+
+#define TX 4
+#define TY 32
+
+#define TK 64
+td_integration_matmul_M510_K510_N510
+/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/site-packages/numpy-1.22.3-py3.10-linux-x86_64.egg/numpy/core/_methods.py:179: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Performance (accuracy) summary based on 969 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.01004217714400482
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BX		BY		TK		TX		TY		execution time		score
+
+34.0		15.0		102.0		3.0		34.0		99.58		4638.289776325226
+
+
+#define BX 34
+#define BY 15
+
+#define TX 3
+#define TY 34
+
+#define TK 102
+td_integration_matmul_M32_K1024_N1024
+/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/site-packages/numpy-1.22.3-py3.10-linux-x86_64.egg/numpy/core/_methods.py:179: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Performance (accuracy) summary based on 970 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.03595828838547285
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BX		BY		TK		TX		TY		execution time		score
+
+2.0		32.0		256.0		16.0		8.0		27.81		2599.485614299774
+
+
+#define BX 2
+#define BY 32
+
+#define TX 16
+#define TY 8
+
+#define TK 256
+td_integration_matmul_M256_K256_N256
+/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/site-packages/numpy-1.22.3-py3.10-linux-x86_64.egg/numpy/core/_methods.py:179: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Performance (accuracy) summary based on 967 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.0818330605564648
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BX		BY		TK		TX		TY		execution time		score
+
+16.0		16.0		64.0		16.0		4.0		12.22		6748.416501522064
+
+
+#define BX 16
+#define BY 16
+
+#define TX 16
+#define TY 4
+
+#define TK 64
+td_integration_matmul_M256_K1024_N256
+/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/site-packages/numpy-1.22.3-py3.10-linux-x86_64.egg/numpy/core/_methods.py:179: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Performance (accuracy) summary based on 978 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.02755580049600441
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BX		BY		TK		TX		TY		execution time		score
+
+32.0		16.0		128.0		4.0		8.0		36.29		556.2653391361237
+
+
+#define BX 32
+#define BY 16
+
+#define TX 4
+#define TY 8
+
+#define TK 128
+td_integration_matmul_M224_K512_N224
+/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/site-packages/numpy-1.22.3-py3.10-linux-x86_64.egg/numpy/core/_methods.py:179: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Performance (accuracy) summary based on 963 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.05571030640668524
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BX		BY		TK		TX		TY		execution time		score
+
+14.0		7.0		64.0		16.0		8.0		17.95		334.9154000282288
+
+
+#define BX 14
+#define BY 7
+
+#define TX 16
+#define TY 8
+
+#define TK 64
+td_integration_matmul_M224_K224_N224
+/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/site-packages/numpy-1.22.3-py3.10-linux-x86_64.egg/numpy/core/_methods.py:179: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Performance (accuracy) summary based on 980 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.07473841554559042
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BX		BY		TK		TX		TY		execution time		score
+
+32.0		8.0		112.0		1.0		28.0		13.38		4342.66295337677
+
+
+#define BX 32
+#define BY 8
+
+#define TX 1
+#define TY 28
+
+#define TK 112
+td_integration_matmul_M224_K1024_N224
+/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/site-packages/numpy-1.22.3-py3.10-linux-x86_64.egg/numpy/core/_methods.py:179: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Performance (accuracy) summary based on 959 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.028587764436821043
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BX		BY		TK		TX		TY		execution time		score
+
+56.0		7.0		128.0		2.0		16.0		34.98		5182.863839149475
+
+
+#define BX 56
+#define BY 7
+
+#define TX 2
+#define TY 16
+
+#define TK 128
+td_integration_matmul_M120_K512_N120
+/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/site-packages/numpy-1.22.3-py3.10-linux-x86_64.egg/numpy/core/_methods.py:179: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Performance (accuracy) summary based on 965 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.07369196757553427
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BX		BY		TK		TX		TY		execution time		score
+
+15.0		15.0		128.0		8.0		8.0		13.57		4900.618281364441
+
+
+#define BX 15
+#define BY 15
+
+#define TX 8
+#define TY 8
+
+#define TK 128
+td_integration_matmul_M120_K120_N120
+/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/site-packages/numpy-1.22.3-py3.10-linux-x86_64.egg/numpy/core/_methods.py:179: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Performance (accuracy) summary based on 979 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.15313935681470137
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BX		BY		TK		TX		TY		execution time		score
+
+20.0		6.0		120.0		6.0		10.0		6.53		2442.8293166160583
+
+
+#define BX 20
+#define BY 6
+
+#define TX 6
+#define TY 10
+
+#define TK 120
+td_integration_matmul_M1024_K512_N1024
+/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/site-packages/numpy-1.22.3-py3.10-linux-x86_64.egg/numpy/core/_methods.py:179: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Performance (accuracy) summary based on 962 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.00939319932368965
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BX		BY		TK		TX		TY		execution time		score
+
+16.0		32.0		32.0		32.0		4.0		106.46		3541.232825756073
+
+
+#define BX 16
+#define BY 32
+
+#define TX 32
+#define TY 4
+
+#define TK 32
+td_integration_matmul_M1024_K32_N1024
+Performance (accuracy) summary based on 966 evaluations:
+Min:  0.00022222222222222223
+Max:  0.06377551020408163
+Mean:  0.007584895473701847
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BX		BY		TK		TX		TY		execution time		score
+
+64.0		8.0		32.0		8.0		16.0		15.68		6520.509003639221
+
+
+#define BX 64
+#define BY 8
+
+#define TX 8
+#define TY 16
+
+#define TK 32
+td_integration_matmul_M1024_K256_N1024
+/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/site-packages/numpy-1.22.3-py3.10-linux-x86_64.egg/numpy/core/_methods.py:179: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Performance (accuracy) summary based on 977 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.01594387755102041
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BX		BY		TK		TX		TY		execution time		score
+
+64.0		8.0		32.0		8.0		16.0		62.72		5403.379266262054
+
+
+#define BX 64
+#define BY 8
+
+#define TX 8
+#define TY 16
+
+#define TK 32
+td_integration_matmul_M1024_K128_N1024
+/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/site-packages/numpy-1.22.3-py3.10-linux-x86_64.egg/numpy/core/_methods.py:179: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Performance (accuracy) summary based on 983 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.02838489923360772
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BX		BY		TK		TX		TY		execution time		score
+
+64.0		8.0		32.0		1.0		128.0		35.23		11398.531046628952
+
+
+#define BX 64
+#define BY 8
+
+#define TX 1
+#define TY 128
+
+#define TK 32
+td_integration_matmul_M1024_K1024_N32
+/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/site-packages/numpy-1.22.3-py3.10-linux-x86_64.egg/numpy/core/_methods.py:179: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Performance (accuracy) summary based on 978 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.03588087549336204
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BX		BY		TK		TX		TY		execution time		score
+
+64.0		1.0		256.0		16.0		8.0		27.87		1225.480387687683
+
+
+#define BX 64
+#define BY 1
+
+#define TX 16
+#define TY 8
+
+#define TK 256
+td_integration_matmul_M1024_K1024_N1024
+/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/site-packages/numpy-1.22.3-py3.10-linux-x86_64.egg/numpy/core/_methods.py:179: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Performance (accuracy) summary based on 956 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.0049539284652729615
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BX		BY		TK		TX		TY		execution time		score
+
+16.0		32.0		64.0		32.0		4.0		201.86		3723.669791221618
+
+
+#define BX 16
+#define BY 32
+
+#define TX 32
+#define TY 4
+
+#define TK 64
+td_integration_matmul_M1000_K1000_N1000
+/uufs/chpc.utah.edu/sys/installdir/r8/python/3.10.3/lib/python3.10/site-packages/numpy-1.22.3-py3.10-linux-x86_64.egg/numpy/core/_methods.py:179: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+Performance (accuracy) summary based on 960 evaluations:
+Min:  5.562684646268003e-309
+Max:  0.003808653260207191
+Mean:  0.0
+The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:
+
+BX		BY		TK		TX		TY		execution time		score
+
+25.0		25.0		50.0		8.0		20.0		262.56		2466.771255254745
+
+
+#define BX 25
+#define BY 25
+
+#define TX 8
+#define TY 20
+
+#define TK 50

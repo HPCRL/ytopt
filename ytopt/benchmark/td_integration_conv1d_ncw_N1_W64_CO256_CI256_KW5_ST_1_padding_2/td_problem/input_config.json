@@ -1,0 +1,66 @@
+{
+    "bookkeeping": {
+        "autotuner_target_dir": "/scratch/general/vast/u1418973/porting-ytopt/ytopt/htd-codegen_conv1d_ncw_N1_W64_CO256_CI256_KW5_ST_1_padding_2",
+        "autotuner_function_to_target" : "conv_1d_ncw_fcw",
+        "autotuner_payload_ir_file" : "test/conv1d_ncw/input_mlir/conv1d_ncw_N1_W64_CO256_CI256_KW5_ST_1_padding_2_sm_80.mlir",
+        "autotuner_highlevel_td_spec_file" : "main.cpp",
+        "autotuner_lowlevel_td_spec_file" : "conv1d_gpu_spec_tvm.mlir",
+        "autotuner_input" : [
+             {
+                 "shape" : "1x256x68xf32=1",
+                 "value" : "1"
+             },
+             {
+                 "shape" : "256x256x5xf32=1",
+                 "value" : "1"
+             },
+             {
+                 "shape" : "1x256x64xf32=0",
+                 "value" : "0"
+             }
+        ]
+    },
+    "configuration" : [
+         {
+         "name": "BN",
+         "type": "categorical",
+         "choices": [1]
+         },
+         {
+         "name": "TN",
+         "type": "categorical",
+         "choices": [1]
+         },
+         {
+         "name": "BF",
+         "type": "categorical",
+         "choices": [1, 2, 4, 8, 16, 32, 64, 128, 256]
+         },
+         {
+         "name": "TF",
+         "type": "categorical",
+         "choices": [1, 2, 4, 8, 16, 32, 64, 128, 256]
+         },
+         {
+         "name": "BOW",
+         "type": "categorical",
+         "choices": [1, 2, 4, 8, 16, 32, 64]
+         },
+         {
+         "name": "TOW",
+         "type": "categorical",
+         "choices": [1, 2, 4, 8, 16, 32, 64]
+         },
+         {
+         "name": "TC",
+         "type": "categorical",
+         "choices": [1, 2, 4, 8, 16, 32, 64, 128, 256]
+         },
+         {
+         "name": "TKW",
+         "type": "categorical",
+         "choices": [1, 5]
+	 }
+    ]
+ }
+ 

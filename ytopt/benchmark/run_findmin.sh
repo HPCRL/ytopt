@@ -61,7 +61,7 @@ for dir in "${directories[@]}"; do
   cd "$dir/td_problem"
   echo "$dir"
   # Modify the Python file using sed
-  #sed -i 's/\b12\b/11/g' findMin.py
+#  sed -i 's/\b12\b/11/g' findMin.py
 
   # Run Python file
   python findMin.py

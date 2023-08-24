@@ -13,7 +13,7 @@ class Plopper:
         self.autotuner_payload_ir_file = bookkeeping["autotuner_payload_ir_file"]
 
         # Initializing global variables
-        self.sourcefile = sourcefile
+        self.sourcefile = os.path.abspath(sourcefile)
         self.outputdir = outputdir + "/tmp_files"
         if not os.path.exists(self.outputdir):
             os.makedirs(self.outputdir)

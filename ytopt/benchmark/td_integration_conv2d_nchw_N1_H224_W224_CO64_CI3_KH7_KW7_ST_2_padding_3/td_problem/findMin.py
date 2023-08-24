@@ -42,4 +42,5 @@ for i in range(len(new_array)):
       print(f"#define TC {int(new_array[i,4])}")
       print(f"#define TKH {int(new_array[i,6])}")
       print(f"#define TKW {int(new_array[i,7])}")
+      print(f"#define VECTORIZATION {int(new_array[i,11])}")
 

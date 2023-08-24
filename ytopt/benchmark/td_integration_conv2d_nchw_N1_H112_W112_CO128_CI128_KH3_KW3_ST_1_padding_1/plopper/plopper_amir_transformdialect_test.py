@@ -13,7 +13,7 @@ class Plopper:
         self.autotuner_payload_ir_file = bookkeeping["autotuner_payload_ir_file"]
 
         # Initializing global variables
-        self.sourcefile = sourcefile
+        self.sourcefile = os.path.abspath(sourcefile)
         self.outputdir = outputdir + "/tmp_files"
         if not os.path.exists(self.outputdir):
             os.makedirs(self.outputdir)
@@ -79,7 +79,7 @@ class Plopper:
         #######################################################################
         # Logger
         # print(compile_cmd)
-       # print(run_cmd)
+        # print(run_cmd)
         # Execute the command in a subshell using os.system
         return_value = os.system(build_cmd)
         if return_value == 0:

@@ -23,7 +23,7 @@ print("Min: ", 1/x.max())
 print("Max: ", 1/x.min())
 print("Mean: ", 1/x.mean())
 print("The best configurations (for the smallest 1/accuracy) of P1, P2, P3 and P4 is:\n")
-print("BF\t\tBN\t\tBOH\t\tBOW\t\tTC\t\tTF\t\tTKH\t\tTKW\t\tTN\t\tTOH\t\tTOW\t\tVECTORIZATION\t\texecution time\t\tscore\n")
+print("BF\t\tBN\t\tBOH\t\tBOW\t\tTC\t\tTF\t\tTKH\t\tTKW\t\tTN\t\tTOH\t\tTOW\t\texecution time\t\tscore\n")
 mn = x.min()
 for i in range(len(new_array)): 
    if x[i] == mn:
