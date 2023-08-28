@@ -101,7 +101,7 @@ conv1d_directories=(
 current_dir=$(pwd)
 
 # Iterate over the directories
-for dir in "${conv_directories[@]}"; do
+for dir in "${matvec_directories[@]}"; do
   # Change to directory
   cd "$dir/td_problem"
   echo "$dir"
@@ -109,12 +109,10 @@ for dir in "${conv_directories[@]}"; do
 #  sed -i 's/\b12\b/11/g' findMin.py
 
   # print file name 
-  #echo $current_dir | awk -F'/' '{sub("td_integration_", "", $(NF-1)); print $(NF-1)}'
+  echo $current_dir | awk -F'/' '{sub("td_integration_", "", $(NF-1)); print $(NF-1)}'
   # Run Python file
-  python3 findMin.py
-  #python3 -W ignore findMin.py | grep -E '^\s*[0-9.]+\s+[0-9.]+\s+[0-9.]+\s+[0-9.]+\s+[0-9.]+$' | awk '{print $4}'
-  #python3 -W ignore findMin.py | grep -E '^\s*[0-9.]+\s+[0-9.]+\s+[0-9.]+\s+[0-9.]+\s+[0-9.]+\s+[0-9.]+\s+[0-9.]+$' | awk '{print $6}'
-
+  #python3 findMin.py
+  python3 -W ignore findMin.py | grep -E '^\s*[0-9.]+\s+[0-9.]+\s+[0-9.]+\s+[0-9.]+\s+[0-9.]+$' | awk '{print $4}'
 
   # Return to current directory
   cd "$current_dir"

@@ -101,19 +101,19 @@ conv1d_directories=(
 current_dir=$(pwd)
 
 # Iterate over the directories
-for dir in "${conv_directories[@]}"; do
+for dir in "${transpose_gemm_directories[@]}"; do
   # Change to directory
   cd "$dir/td_problem"
-  echo "$dir"
+  #echo "$dir"
   # Modify the Python file using sed
 #  sed -i 's/\b12\b/11/g' findMin.py
 
   # print file name 
   #echo $current_dir | awk -F'/' '{sub("td_integration_", "", $(NF-1)); print $(NF-1)}'
   # Run Python file
-  python3 findMin.py
+  #python3 findMin.py
   #python3 -W ignore findMin.py | grep -E '^\s*[0-9.]+\s+[0-9.]+\s+[0-9.]+\s+[0-9.]+\s+[0-9.]+$' | awk '{print $4}'
-  #python3 -W ignore findMin.py | grep -E '^\s*[0-9.]+\s+[0-9.]+\s+[0-9.]+\s+[0-9.]+\s+[0-9.]+\s+[0-9.]+\s+[0-9.]+$' | awk '{print $6}'
+  python3 -W ignore findMin.py | grep -E '^\s*[0-9.]+\s+[0-9.]+\s+[0-9.]+\s+[0-9.]+\s+[0-9.]+\s+[0-9.]+\s+[0-9.]+$' | awk '{print $6}'
 
 
   # Return to current directory
